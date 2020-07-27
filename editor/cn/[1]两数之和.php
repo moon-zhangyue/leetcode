@@ -17,15 +17,38 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[] $nums
      * @param Integer $target
      * @return Integer[]
      */
-    function twoSum($nums, $target) {
-        
+    function twoSum($nums, $target)
+    {
+
+        if (!is_array($nums)) {
+            return false;
+        }
+        if (!is_int($target)) {
+            return false;
+        }
+        foreach ($nums as $key => $val) {
+            foreach ($nums as $k => $v) {
+                if ($val + $v == $target && $key != $k) {
+                    return [$key, $k];
+                }
+            }
+        }
     }
 }
+
+$nums   = [3, 2, 4];
+$target = 6;
+
+$model = new Solution();
+$res   = $model->twoSum($nums, $target);
+var_dump($res);
+
 //leetcode submit region end(Prohibit modification and deletion)
