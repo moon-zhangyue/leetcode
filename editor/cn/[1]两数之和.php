@@ -28,18 +28,30 @@ class Solution
     function twoSum($nums, $target)
     {
 
-        if (!is_array($nums)) {
-            return false;
-        }
-        if (!is_int($target)) {
-            return false;
-        }
+//        if (!is_array($nums)) {
+//            return false;
+//        }
+//        if (!is_int($target)) {
+//            return false;
+//        }
+//        foreach ($nums as $key => $val) {
+//            foreach ($nums as $k => $v) {
+//                if ($val + $v == $target && $key != $k) {
+//                    return [$key, $k];
+//                }
+//            }
+//        }
+        $found = [];
+
         foreach ($nums as $key => $val) {
-            foreach ($nums as $k => $v) {
-                if ($val + $v == $target && $key != $k) {
-                    return [$key, $k];
-                }
+            $diff = $target - $val;
+
+            if (!isset($found[$diff])) {
+                $found[$val] = $key;
+                continue;
             }
+
+            return [$found[$diff], $key];
         }
     }
 }
