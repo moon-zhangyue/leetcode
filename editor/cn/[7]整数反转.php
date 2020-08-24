@@ -52,25 +52,36 @@ class Solution
 //        }
 //        return $x;
 
-        $f    = $x < 0 ? '-' : '';
-        $x    = abs($x) . '';
-        $len  = strlen($x) - 1;
-        $half = floor($len / 2);
-        for ($i = 0; $i <= $len; $i++) {
-            $target     = $len - $i;
-            $tmp        = $x[$target];
-            $x[$target] = $x[$i];
-            $x[$i]      = $tmp;
-            if ($i == $half) {
-                break; //至此已完成整个字符串字符的位置替换
-            }
+        /* $f    = $x < 0 ? '-' : '';
+         $x    = abs($x) . '';
+         $len  = strlen($x) - 1;
+         $half = floor($len / 2);
+         for ($i = 0; $i <= $len; $i++) {
+             $target     = $len - $i;
+             $tmp        = $x[$target];
+             $x[$target] = $x[$i];
+             $x[$i]      = $tmp;
+             if ($i == $half) {
+                 break; //至此已完成整个字符串字符的位置替换
+             }
+         }
+         $x = intval($f . $x);
+         if ($x > 2147483647  || $x < -2147483646) {
+             return 0;
+         } else {
+             return $x;
+         }*/
+
+        $newNum = 0;
+        while ($x != 0) {
+            $yu     = $x % 10;
+            $x      = intval($x / 10);
+            $newNum = $newNum * 10 + $yu;
         }
-        $x = intval($f . $x);
-        if ($x > 2147483647  || $x < -2147483646) {
+        if ($newNum > (pow(2, 31) - 1) || $newNum < pow(-2, 31)) {
             return 0;
-        } else {
-            return $x;
         }
+        return $newNum;
     }
 }
 
