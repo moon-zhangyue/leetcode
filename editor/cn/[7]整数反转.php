@@ -1,4 +1,4 @@
-<>php
+<?php
 //给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 
 //
 // 示例 1: 
@@ -27,14 +27,20 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $x
      * @return Integer
      */
-    function reverse($x) {
-        
+    function reverse($x)
+    {
+
     }
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
+
+$a = new Solution();
+$a->reverse(1);
