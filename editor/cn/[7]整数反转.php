@@ -36,7 +36,41 @@ class Solution
      */
     function reverse($x)
     {
+//        $max = pow(2, 31) - 1;
+//        $min = pow(-2, 31);
 
+//        $x   = (string)$x;
+//        $res = strstr($x, '-');
+//        if ($res) {//存在-
+//            $x = 0 - (int)strrev($res);
+//        } else {
+//            $x = (int)strrev($x);
+//        }
+//
+//        if ($x > $max || $x < $min) {
+//            return 0;
+//        }
+//        return $x;
+
+        $f    = $x < 0 ? '-' : '';
+        $x    = abs($x) . '';
+        $len  = strlen($x) - 1;
+        $half = floor($len / 2);
+        for ($i = 0; $i <= $len; $i++) {
+            $target     = $len - $i;
+            $tmp        = $x[$target];
+            $x[$target] = $x[$i];
+            $x[$i]      = $tmp;
+            if ($i == $half) {
+                break; //至此已完成整个字符串字符的位置替换
+            }
+        }
+        $x = intval($f . $x);
+        if ($x > 2147483647  || $x < -2147483646) {
+            return 0;
+        } else {
+            return $x;
+        }
     }
 }
 
