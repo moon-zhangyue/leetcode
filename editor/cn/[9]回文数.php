@@ -29,14 +29,22 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $x
      * @return Boolean
      */
-    function isPalindrome($x) {
-        
+    function isPalindrome($x)
+    {
+        $x = (string)$x;
+        $y = strrev($x);
+
+        if ($x === $y) {
+            return true;
+        }
+        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
