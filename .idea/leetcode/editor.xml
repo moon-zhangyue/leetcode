@@ -3,6 +3,14 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/editor/cn/[13]罗马数字转整数.php">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/editor/cn/[13]罗马数字转整数.php" />
+              <option name="questionId" value="13" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/editor/cn/[1]两数之和.php">
           <value>
             <LeetcodeEditor>
