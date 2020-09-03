@@ -92,4 +92,7 @@ class Solution
         return $r;
     }
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
+$a   = new Solution();
+$res = $a->romanToInt('IV');
