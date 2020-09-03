@@ -68,14 +68,28 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param String $s
      * @return Integer
      */
-    function romanToInt($s) {
-        
+    function romanToInt($s)
+    {
+        $arr = ['I' => 1, 'V' => 5, 'X' => 10, 'L' => 50, 'C' => 100, 'D' => 500, 'M' => 1000];
+        $a   = str_split($s);
+        $r   = 0;
+        $p   = 0;
+        foreach ($a as $k) {
+            if ($p && $arr[$k] > $p) {
+                $r += $arr[$k] - $p * 2;
+            } else {
+                $r += $arr[$k];
+            }
+            $p = $arr[$k];
+        }
+        return $r;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
