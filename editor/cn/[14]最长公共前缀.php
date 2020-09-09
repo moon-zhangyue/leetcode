@@ -38,10 +38,21 @@ class Solution
         if ($n == 1) return $strs[0];
 
         $first = strlen($strs[0]);
+
+        $res = '';
+
         for ($i = 0; $i < $first; $i++) {
+            $char = substr($strs[0], $i, 1);
+            for ($k = 1; $k < $n; $k++) {
+                // 比第一个字符串短或者同位置的字符不相同，直接返回
+                if (substr($strs[$i], $i, 1) === false || substr($strs[$i], $i, 1) != $char) {
+                    return $res;
+                }
+            }
 
+            $res .= $char;
         }
-
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
