@@ -45,7 +45,7 @@ class Solution
             $char = substr($strs[0], $i, 1);
             for ($k = 1; $k < $n; $k++) {
                 // 比第一个字符串短或者同位置的字符不相同，直接返回
-                if (substr($strs[$i], $i, 1) === false || substr($strs[$i], $i, 1) != $char) {
+                if (substr($strs[$k], $i, 1) === false || substr($strs[$k], $i, 1) != $char) {
                     return $res;
                 }
             }
