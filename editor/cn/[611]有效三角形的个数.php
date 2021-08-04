@@ -39,12 +39,20 @@ class Solution
 
         $count = 0;
         for ($i = 0; $i < $len; $i++) {
-            for ($j = $i + 1; $j < $len - 1; $j++) {
-                $k = $j + 1;
-                while ($nums[$i] + $nums[$j] > $nums[$k] && $k <= $len - 1) {
-                    $count++;
-                    $k++;
+            for ($j = $i + 1; $j < $len; $j++) {
+                $left  = $j + 1;
+                $right = $len - 1;
+                $k     = $j;
+                while ($left <= $right) { //二分法排序
+                    (int)$mid = floor(($left + $right) / 2);
+                    if ($nums[$mid] < $nums[$i] + $nums[$j]) {
+                        $k    = $mid;
+                        $left = $mid + 1;
+                    } else {
+                        $right = $mid - 1;
+                    }
                 }
+                $count += $k - $j;
             }
         }
         return $count;
