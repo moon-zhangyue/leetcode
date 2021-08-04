@@ -3,19 +3,11 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
-        <entry key="$PROJECT_DIR$/editor/cn/[13]罗马数字转整数.php">
+        <entry key="$PROJECT_DIR$/editor/cn/[17]电话号码的字母组合.php">
           <value>
             <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/editor/cn/[13]罗马数字转整数.php" />
-              <option name="questionId" value="13" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/editor/cn/[14]最长公共前缀.php">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/editor/cn/[14]最长公共前缀.php" />
-              <option name="questionId" value="14" />
+              <option name="path" value="$PROJECT_DIR$/editor/cn/[17]电话号码的字母组合.php" />
+              <option name="questionId" value="17" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -27,19 +19,27 @@
             </LeetcodeEditor>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/editor/cn/[20]有效的括号.php">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/editor/cn/[20]有效的括号.php" />
-              <option name="questionId" value="20" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/editor/cn/[21]合并两个有序链表.php">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/editor/cn/[21]合并两个有序链表.php" />
               <option name="questionId" value="21" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/editor/cn/[242]有效的字母异位词.php">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/editor/cn/[242]有效的字母异位词.php" />
+              <option name="questionId" value="242" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/editor/cn/[26]删除排序数组中的重复项.php">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/editor/cn/[26]删除排序数组中的重复项.php" />
+              <option name="questionId" value="26" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -59,19 +59,19 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/editor/cn/[611]有效三角形的个数.php">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/editor/cn/[611]有效三角形的个数.php" />
+              <option name="questionId" value="611" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/editor/cn/[7]整数反转.php">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/editor/cn/[7]整数反转.php" />
               <option name="questionId" value="7" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/editor/cn/[9]回文数.php">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/editor/cn/[9]回文数.php" />
-              <option name="questionId" value="9" />
             </LeetcodeEditor>
           </value>
         </entry>
