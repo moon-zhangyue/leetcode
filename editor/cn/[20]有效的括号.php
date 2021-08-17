@@ -63,4 +63,8 @@ class Solution
     }
 
 }
+
+$a = new Solution();
+
+$a->isValid("'[',')'");
 //leetcode submit region end(Prohibit modification and deletion)
