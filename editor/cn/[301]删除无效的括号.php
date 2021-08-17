@@ -24,7 +24,8 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param String $s
