@@ -54,17 +54,17 @@ class Solution
 
     function isValid($s)
     {
-        $s = str_replace(['()', '[]', '{}'], '', $s, $count);
+        $s = str_replace(['()', '[]', '{}'], '', $s, $count); //替换合格的,再去判断剩余是否存在
+
         if ($count == 0) {
             return strlen($s) == 0;
         } else {
             return $this->isValid($s);
         }
     }
-
 }
 
 $a = new Solution();
 
-$a->isValid("'[',')'");
+$a->isValid("[]()[");
 //leetcode submit region end(Prohibit modification and deletion)
