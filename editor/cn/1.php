@@ -1,70 +1,55 @@
 <?php
-//给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
-//
-// 有效字符串需满足：
-//
-//
-// 左括号必须用相同类型的右括号闭合。
-// 左括号必须以正确的顺序闭合。
-//
-//
-// 注意空字符串可被认为是有效字符串。
-//
-// 示例 1:
-//
-// 输入: "()"
-//输出: true
-//
-//
-// 示例 2:
-//
-// 输入: "()[]{}"
-//输出: true
-//
-//
-// 示例 3:
-//
-// 输入: "(]"
-//输出: false
-//
-//
-// 示例 4:
-//
-// 输入: "([)]"
-//输出: false
-//
-//
-// 示例 5:
-//
-// 输入: "{[]}"
-//输出: true
-// Related Topics 栈 字符串
-// 👍 1824 👎 0
 
+class ListNode
+{
+    public $val = 0;
+    public $next = null;
 
-//leetcode submit region begin(Prohibit modification and deletion)
+    function __construct($val = 0, $next = null)
+    {
+        $this->val  = $val;
+        $this->next = $next;
+    }
+}
+
 class Solution
 {
 
     /**
-     * @param String $s
+     * @param ListNode $l1
+     * @param ListNode $l2
      *
-     * @return Boolean
+     * @return ListNode
      */
-
-    function isValid($s)
+    function mergeTwoLists($l1, $l2)
     {
-        $s = str_replace(['()', '[]', '{}'], '', $s, $count); //替换合格的,再去判断剩余是否存在
-        var_dump($count);
-        if ($count == 0) {
-            return strlen($s) == 0;
-        } else {
-            return $this->isValid($s);
+        $Head = new ListNode(null);
+
+        $cur = $Head;
+
+        while ($l1 !== null && $l2 !== null) {
+            if ($l1->val <= $l2->val) {
+                $cur->next = $l1;
+                $l1        = $l1->next;
+            } else {
+                $cur->next = $l2;
+                $l2        = $l2->next;
+            }
+            $cur = $cur->next;
         }
+
+        if ($l1 !== null) {
+            $cur->next = $l1;
+        } elseif ($l2 !== null) {
+            $cur->next = $l2;
+        }
+
+        return $Head->next;
     }
 }
 
-$a = new Solution();
+$obj = new Solution();
 
-$a->isValid("[]()[");
-//leetcode submit region end(Prohibit modification and deletion)
+$res = $obj->mergeTwoLists([1, 2, 4], [1, 3, 4, 6]);
+
+var_dump($res);
