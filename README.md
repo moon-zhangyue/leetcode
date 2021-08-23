@@ -6,7 +6,6 @@ LeetCode
 | #            | Title                                                        | Solution                                                     | Difficulty |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | LeetCode 647 | [回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | [JAVA](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/countSubstrings.java) | Medium     |
-| LeetCode 183 | [从不订购的客户](https://leetcode-cn.com/problems/customers-who-never-order/) | [MySQL](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/mysql/NeverOrder.sql) | Easy       |
 | LeetCode 171 | [Excel 表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/titleToNumber.go) | Easy       |
 | LeetCode 169 | [多数元素](https://leetcode-cn.com/problems/majority-element/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/majorityElement.go) | Easy       |
 | LeetCode 168 | [Excel表列名称](https://leetcode-cn.com/problems/excel-sheet-column-title/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/convertToTitle.go) | Easy       |
