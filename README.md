@@ -63,7 +63,7 @@ LeetCode
 | LeetCode 12  | [整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/intToRoman.java) | Medium     |
 | LeetCode 11  | [盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/maxArea.java) | Medium     |
 | LeetCode 9   | [回文数](https://leetcode-cn.com/problems/palindrome-number/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/isPalindrome.java) | Easy       |
-| LeetCode 7   | [整数反转](https://leetcode-cn.com/problems/reverse-integer/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/reverse.java) | Easy       |
+| LeetCode 7   | [整数反转](https://leetcode-cn.com/problems/reverse-integer/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B7%5D%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.php) | Easy       |
 | LeetCode 6   | [Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/stringConvert.java) | Medium     |
 | LeetCode 5   | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/longestPalindrome.java) | Medium     |
 | LeetCode 3   | [无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/maxNoRepetition.java) | Medium     |
