@@ -1,70 +1,91 @@
 <?php
+//给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
+//
+// 不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+//
+//
+//
+// 说明:
+//
+// 为什么返回数值是整数，但输出的答案是数组呢?
+//
+// 请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+//
+// 你可以想象内部操作如下:
+//
+//
+//// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+//int len = removeDuplicates(nums);
+//
+//// 在函数里修改输入数组对于调用者是可见的。
+//// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+//for (int i = 0; i < len; i++) {
+//    print(nums[i]);
+//}
+//
+//
+//
+// 示例 1：
+//
+//
+//输入：nums = [1,1,2]
+//输出：2, nums = [1,2]
+//解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+//
+//
+// 示例 2：
+//
+//
+//输入：nums = [0,0,1,1,1,2,2,3,3,4]
+//输出：5, nums = [0,1,2,3,4]
+//解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
+//
+//
+//
+//
+// 提示：
+//
+//
+// 0 <= nums.length <= 3 * 10⁴
+// -10⁴ <= nums[i] <= 10⁴
+// nums 已按升序排列
+//
+//
+//
+// Related Topics 数组 双指针 👍 2169 👎 0
 
-class ListNode
-{
-    public $val = 0;
-    public $next = null;
 
-    function __construct($val = 0, $next = null)
-    {
-        $this->val  = $val;
-        $this->next = $next;
-    }
-}
-
+//leetcode submit region begin(Prohibit modification and deletion)
 class Solution
 {
 
     /**
-     * @param ListNode $l1
-     * @param ListNode $l2
+     * @param Integer[] $nums
      *
-     * @return ListNode
+     * @return Integer
      */
-    function mergeTwoLists($l1, $l2)
+    function removeDuplicates(&$nums)
     {
-//        $Head = new ListNode(null);
-//
-//        $cur = $Head;
-//
-//        while ($l1 !== null && $l2 !== null) {
-//            if ($l1->val <= $l2->val) {
-//                $cur->next = $l1;
-//                $l1        = $l1->next;
-//            } else {
-//                $cur->next = $l2;
-//                $l2        = $l2->next;
-//            }
-//            $cur = $cur->next;
-//        }
-//
-//        if ($l1 !== null) {
-//            $cur->next = $l1;
-//        } elseif ($l2 !== null) {
-//            $cur->next = $l2;
-//        }
-//
-//        return $Head->next;
-
-        if ($l1 === null) {
-            return $l2;
-        }
-        if ($l2 === null) {
-            return $l1;
+        $exp = $nums[0];
+        foreach ($nums as $k => $v) {
+            if ($k > 0) {//从第二个开始
+                if ($v == $exp) {//重复元素
+                    unset($nums[$k]);
+                } else {
+                    $exp = $v;
+                }
+            }
         }
 
-        if ($l1->val < $l2->val) {
-            $l1->next = $this->mergeTwoLists($l1->next, $l2);
-            return $l1;
-        } else {
-            $l2->next = $this->mergeTwoLists($l1, $l2->next);
-            return $l2;
-        }
+        $len = count(array_values($nums));
+        var_dump($len);
+        var_dump(array_values($nums));
     }
 }
 
-$obj = new Solution();
+//leetcode submit region end(Prohibit modification and deletion)
 
-$res = $obj->mergeTwoLists([1, 2, 4], [1, 3, 4, 6]);
 
-var_dump($res);
+$nums  = [1,1,2];
+$class = new Solution();
+$class->removeDuplicates($nums);
