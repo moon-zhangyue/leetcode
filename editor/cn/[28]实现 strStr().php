@@ -59,18 +59,60 @@ class Solution
     function strStr($haystack, $needle)
     {
         //①自带函数
-        if (strlen($needle) == 0) {
-            return 0;
-        }
-        $res = strpos($haystack, $needle);
-        if ($res === false) {
-            $res = -1;
-        }
-        return $res;
+//        if (strlen($needle) == 0) {
+//            return 0;
+//        }
+//        $res = strpos($haystack, $needle);
+//        if ($res === false) {
+//            $res = -1;
+//        }
+//        return $res;
 
         //②暴力循环
 
         //③KMP算法
+
+        //④双指针--易超时
+        if (!$needle) {
+            return 0;
+        }
+        $fast = 0;
+        $slow = 0;
+        $h    = strlen($haystack);
+        $n    = strlen($needle);
+        while ($slow < $n && $fast < $h) {
+            if ($haystack[$fast] != $needle[$slow]) {
+                $fast = $fast - $slow;
+                $slow = 0;
+            } else {
+                $slow++;
+            }
+            $fast++;
+        }
+        if ($slow == $n) {
+            return $fast - $slow;
+        } else {
+            return -1;
+        }
+
+        //⑤截取长度--太容易超时
+//        $len1 = strlen($haystack);
+//        $len2 = strlen($needle);
+//
+//        if ($len2 == 0) {
+//            return 0;
+//        }
+//        for ($i = 0; $i < $len1; $len1++) {
+//            if ($haystack{$i} == $needle{0}) {//查询第一次出现的位置 截取对应长度的字符 比较
+//                $strleng = substr($haystack, $i, $len2);
+//
+//                if ($strleng === $needle) {
+//                    return $i;
+//                }
+//            }
+//        }
+//        return -1;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
