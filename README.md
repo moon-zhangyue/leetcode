@@ -45,7 +45,7 @@ LeetCode
 | LeetCode 36  | [有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/isValidSudoku.go) | Medium     |
 | LeetCode 35  | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/searchInsert.go) | Easy       |
 | LeetCode 33  | [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/search.go) | Medium     |
-| LeetCode 27  | [移除元素](https://leetcode-cn.com/problems/remove-element/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/removeElement.java) | Easy       |
+| LeetCode 27  | [移除元素](https://leetcode-cn.com/problems/remove-element/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/[27]removeElement.php) | Easy       |
 | LeetCode 26  | [删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/[26]removeDuplicates.php) | Easy       |
 | LeetCode 25  | [K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/reverseKGroup.java) | hard       |
 | LeetCode 24  | [两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | [Java](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/java/src/swapPairs.java) | Medium     |
