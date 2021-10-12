@@ -20,21 +20,21 @@ class Solution
 //        $nums = array_unique($nums);
 
         //②
-//        $len    = sizeof($nums);
-//        $k      = 0;
-//        $repeat = 0;
-//        for ($i = 0; $i < $len; $i++) {
-//            if ($nums[$i] == $nums[$k] && $i != $k) {
-//                $repeat++;
-//            } else if ($nums[$i] != $nums[$k] && $repeat) {
-//                $nums[++$k] = $nums[$i];
-//                $repeat     = 1;
-//            } else if ($nums[$i] != $nums[$k] && !$repeat) {
-//                $k++;
-//            }
-//        }
-//
-//        return $k + 1;
+        $len    = sizeof($nums);
+        $k      = 0;
+        $repeat = 0;
+        for ($i = 0; $i < $len; $i++) {
+            if ($nums[$i] == $nums[$k] && $i != $k) {
+                $repeat++;
+            } else if ($nums[$i] != $nums[$k] && $repeat) {
+                $nums[++$k] = $nums[$i];
+                $repeat     = 1;
+            } else if ($nums[$i] != $nums[$k] && !$repeat) {
+                $k++;
+            }
+        }
+
+        return $k + 1;
 
         //③
 //        $len = sizeof($nums);
@@ -51,17 +51,17 @@ class Solution
 //        return $k + 1;
 
         //④ 快慢指针
-        $numsLen = sizeof($nums);
-        $slow    = 0;//慢指针
-        $fast    = 1;//快指针
-        while ($fast < $numsLen) {
-            if ($nums[$slow] != $nums[$fast]) {
-                $nums[++$slow] = $nums[$fast];//移动慢指针，并且赋值
-            }
-            $fast++;//每一步都移动快指针
-        }
-
-        return $slow + 1;
+//        $numsLen = sizeof($nums);
+//        $slow    = 0;//慢指针
+//        $fast    = 1;//快指针
+//        while ($fast < $numsLen) {
+//            if ($nums[$slow] != $nums[$fast]) {
+//                $nums[++$slow] = $nums[$fast];//移动慢指针，并且赋值
+//            }
+//            $fast++;//每一步都移动快指针
+//        }
+//
+//        return $slow + 1;
     }
 }
 
