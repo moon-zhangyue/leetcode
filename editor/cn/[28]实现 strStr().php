@@ -113,6 +113,36 @@ class Solution
 //        }
 //        return -1;
 
+        /*第一次写用官方的双指针法直接超时了
+然后想了下，这个每次可以从子串头尾的位置同时比较，头尾有一个不一样，直接来下一波
+这样的优化 是针对子串后半部分如果不一样的话 会非常明显*/
+
+        $left_h = 0;
+        if ($needle == '') {
+            return 0;
+        }
+        while ($left_h <= strlen($haystack) - strlen($needle)) {
+            $left_n  = 0;
+            $right_h = $left_h + strlen($needle) - 1;
+            $right_n = strlen($needle) - 1;
+            $p       = $left_h;
+            while (true) {
+                if (($haystack[$p] != $needle[$left_n]) || ($haystack[$right_h] != $needle[$right_n])) {
+                    break;
+                }
+                $p++;
+                $left_n++;
+                $right_h--;
+                $right_n--;
+
+                if ($p > $right_h) {
+                    return $left_h;
+                }
+            }
+            $left_h++;
+
+        }
+        return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
