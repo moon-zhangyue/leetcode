@@ -95,10 +95,7 @@ class Solution
 然后想了下，这个每次可以从子串头尾的位置同时比较，头尾有一个不一样，直接来下一波
 这样的优化 是针对子串后半部分如果不一样的话 会非常明显*/
 
-        $left_h  = 0;
-        $right_h = strlen($needle) - 1;
-        $left_n  = 0;
-        $right_n = strlen($needle) - 1;
+        $left_h = 0;
         if ($needle == '') {
             return 0;
         }

@@ -66,18 +66,45 @@ class Solution
 //        }
 //        return -1;
 
-        $len   = strlen($haystack);
-        $ckLen = strlen($needle);
-        if (0 == $ckLen) {
+//        $len   = strlen($haystack);
+//        $ckLen = strlen($needle);
+//        if (0 == $ckLen) {
+//            return 0;
+//        }
+//        for ($i = 0; $i + $ckLen <= $len; $i++) {
+//            if ($haystack[$i] != $needle[0]) {
+//                continue;
+//            }
+//            if ($needle == substr($haystack, $i, $ckLen)) {
+//                return $i;
+//            }
+//        }
+//        return -1;
+
+        $left_h = 0;
+        if ($needle == '') {
             return 0;
         }
-        for ($i = 0; $i + $ckLen <= $len; $i++) {
-            if ($haystack[$i] != $needle[0]) {
-                continue;
+        while ($left_h <= strlen($haystack) - strlen($needle)) {
+            $left_n  = 0;
+            $right_h = $left_h + strlen($needle) - 1;
+            $right_n = strlen($needle) - 1;
+            $p       = $left_h;
+            while (true) {
+                if (($haystack[$p] != $needle[$left_n]) || ($haystack[$right_h] != $needle[$right_n])) {
+                    break;
+                }
+                $p++;
+                $left_n++;
+                $right_h--;
+                $right_n--;
+
+                if ($p > $right_h) {
+                    return $left_h;
+                }
             }
-            if ($needle == substr($haystack, $i, $ckLen)) {
-                return $i;
-            }
+            $left_h++;
+
         }
         return -1;
     }
