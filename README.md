@@ -6,6 +6,7 @@ LeetCode
 | #            | Title                                                        | Solution                                                     | Difficulty |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | 剑指 Offer | [03. 数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5Boffer03%5DfindRepeatNumber.php) | Easy     |
+| 剑指 Offer | [069. 山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5Boffer069%5DpeakIndexInMountainArray.php) | Easy     |
 | LeetCode 647 | [回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/countSubstrings.PHP) | Medium     |
 | LeetCode 171 | [Excel 表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/titleToNumber.go) | Easy       |
 | LeetCode 169 | [多数元素](https://leetcode-cn.com/problems/majority-element/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/majorityElement.go) | Easy       |
