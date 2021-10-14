@@ -119,9 +119,9 @@ class Solution
         $last = array();
         $left = -1;
         $ans  = 0;
-        for ($i = 0; $i < 128; $i++) {
-            $last[$i] = -1;
-        }
+//        for ($i = 0; $i < 128; $i++) {
+//            $last[$i] = -1;
+//        }
         $len = strlen($s);
         for ($i = 0; $i < $len; $i++) {
             $left         = max($left, $last[$s[$i]]);

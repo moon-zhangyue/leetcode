@@ -16,31 +16,19 @@ class Solution
      */
     function lengthOfLongestSubstring($s)
     {
-        $n = strlen($s);
-        if ($n <= 1) {
-            return $n;
+        $last = array();
+        $left = -1; //起始位置
+        $ans  = 0;
+//        for ($i = 0; $i < 128; $i++) {
+//            $last[$i] = -1;
+//        }
+        $len = strlen($s);
+        for ($i = 0; $i < $len; $i++) {
+            $left         = max($left, $last[$s[$i]]);
+            $last[$s[$i]] = $i;
+            $ans          = max($ans, $i - $left);
         }
-
-        $left = 0;
-        $hash = [];
-        $max  = 0;
-
-        for ($i = 0; $i < $n; $i++) {
-            $char = $s[$i];
-
-            if (isset($hash[$char])) {
-                $left = max($left, $hash[$char] + 1);
-            }
-
-            // 提前结束遍历
-            if ($left + $max >= $n) break;
-
-            $hash[$char] = $i;
-
-            $max = max($max, $i - $left + 1);
-        }
-
-        return $max;
+        return $ans;
     }
 }
 
