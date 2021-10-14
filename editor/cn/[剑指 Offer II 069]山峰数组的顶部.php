@@ -83,10 +83,27 @@ class Solution
      */
     function peakIndexInMountainArray($arr)
     {
+        //①
         $arrs = $arr;
         sort($arr);
         $len = count($arr);
         return array_search($arr[$len - 1], $arrs);
+
+        //②
+        $max = max($A);
+        return array_search($max, $A);
+
+        //③ 二分查找 时间复杂度： O(log n)
+        //空间复杂度： O(1)
+        $l = 0;
+        $r = count($arr) - 1;
+
+        while ($l < $r) {
+            $c = (int)(($l + $r) / 2);
+            $arr[$c] < $arr[$c + 1] ? $l = $c + 1 : $r = $c;
+        }
+
+        return $l;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
