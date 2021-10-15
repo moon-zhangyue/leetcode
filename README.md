@@ -43,7 +43,7 @@ LeetCode
 | LeetCode 51  | [N 皇后](https://leetcode-cn.com/problems/n-queens/)         | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/solveNQueens.PHP) | hard       |
 | LeetCode 40  | [组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/combinationSum2.go) | Medium     |
 | LeetCode 39  | [组合总和](https://leetcode-cn.com/problems/combination-sum/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/combinationSum.go) | Medium     |
-| LeetCode 38  | [外观数列](https://leetcode-cn.com/problems/count-and-say/)  | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/countAndSay.PHP),[Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/countAndSay.go) | Medium     |
+| LeetCode 38  | [外观数列](https://leetcode-cn.com/problems/count-and-say/)  | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B38%5D%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97.php) | Medium     |
 | LeetCode 36  | [有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/isValidSudoku.go) | Medium     |
 | LeetCode 35  | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/searchInsert.go) | Easy       |
 | LeetCode 33  | [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/search.go) | Medium     |
