@@ -16,8 +16,8 @@ class Solution
      */
     function countAndSay($n)
     {
+        $str = '1';
         for ($i = 2; $i <= $n; $i++) {
-            $str   = '1';
             $sb    = [];
             $start = 0;
             $pos   = 0;
@@ -37,4 +37,4 @@ class Solution
 }
 
 $class = new Solution();
-var_dump($class->countAndSay(4));
+var_dump($class->countAndSay(5));
