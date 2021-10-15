@@ -16,8 +16,8 @@ class Solution
      */
     function countAndSay($n)
     {
-        $str = '1';
         for ($i = 2; $i <= $n; $i++) {
+            $str   = '1';
             $sb    = [];
             $start = 0;
             $pos   = 0;
@@ -26,7 +26,7 @@ class Solution
                 while ($pos < strlen($str) && $str[$pos] === $str[$start]) {
                     $pos++;
                 }
-                array_push($sb, '' + ($pos - $start) + $str[$start]);
+                array_push($sb, ($pos - $start) . $str{$start});
                 $start = $pos;
             }
             $str = (string)implode('', $sb);
