@@ -65,7 +65,47 @@ class Solution
      */
     function searchInsert($nums, $target)
     {
+        //一
+        $len = count($nums);
 
+        if ($target > $nums[$len - 1]) {
+            return $len;
+        }
+        for ($i = 0; $i < $len; $i++) {
+            if ($nums[$i] == $target) {
+                return $i;
+            }
+            if ($i < $len - 1 && $nums[$i] < $target && $nums[$i + 1] > $target) {
+                return $i + 1;
+            }
+        }
+        return 0;
+
+        //二
+        $nums[] = $target;
+        sort($nums);
+        return array_search($target, $nums);
+
+        //三 时间复杂度O(logn) 必然使用二分查找
+        $n = count($nums);
+        if ($target < $nums[0]) return 0;
+        if ($target > end($nums)) return $n;
+
+        $l = 0;
+        $r = $n - 1;
+        while ($l < $r) {
+            $mid = $l + floor(($r - $l) / 2);
+            if ($nums[$mid] === $target) return $mid;
+            // 当中间元素严格小于目标元素时，肯定不是解
+            if ($nums[$mid] < $target) {
+                // 下一轮搜索区间是 [mid+1, right]
+                $l = $mid + 1;
+            } else {
+                $r = $mid;
+            }
+        }
+
+        return $l;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
