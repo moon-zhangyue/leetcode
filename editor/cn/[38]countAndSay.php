@@ -20,7 +20,7 @@ class Solution
         for ($i = 2; $i <= $n; $i++) {
             $sb    = [];
             $start = 0;//起始位置
-            $pos   = 0;//
+            $pos   = 0;//变更数字位置
 
             while ($pos < strlen($str)) {
                 //开始统计每一个数字重复次数的起始-重点位置
