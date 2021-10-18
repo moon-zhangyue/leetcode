@@ -46,6 +46,7 @@ class Solution
      */
     function findComplement($num)
     {
+        //一--循环迭代
         $exp = (string)base_convert($num, 10, 2);
 
         $str = '';
@@ -55,6 +56,23 @@ class Solution
         }
 
         return base_convert($str, 2, 10);
+
+        //二
+        return pow(2, strlen(decbin($num))) - 1 - $num;
+
+        //三-位运算
+        /*通过右移1位来遍历二进制数位数。
+            遍历的同时，定义一个二进制数$res，每位赋值1。
+            按位异或，$res ^ $num就有取反的效果。*/
+        $tmp = $num;
+        $int = 0;
+
+        while ($tmp) {
+            $int = ($int << 1) + 1;
+            $tmp >>= 1;
+        }
+
+        return $int ^ $num;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -16,7 +16,15 @@ class Solution
      */
     function findComplement($num)
     {
-        return pow(2, strlen(decbin($num))) - 1 - $num;
+        $tmp = $num;
+        $int = 0;
+
+        while ($tmp) {
+            $int = ($int << 1) + 1;
+            $tmp >>= 1;
+        }
+
+        return $int ^ $num;
     }
 }
 
