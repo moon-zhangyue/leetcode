@@ -38,7 +38,7 @@ LeetCode
 | LeetCode 67  | [二进制求和](https://leetcode-cn.com/problems/add-binary/)   | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/addBinary.go) | Easy       |
 | LeetCode 66  | [加一](https://leetcode-cn.com/problems/plus-one/)           | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/plusOne.go) | Easy       |
 | LeetCode 58  | [最后一个单词的长度](https://leetcode-cn.com/problems/length-of-last-word/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/lengthOfLastWord.go) | Easy       |
-| LeetCode 53  | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxSubArray.go) | Easy       |
+| LeetCode 53  | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B53%5D%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.php) | Easy       |
 | LeetCode 52  | [N 皇后 II](https://leetcode-cn.com/problems/n-queens-ii/)   | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/totalNQueens.PHP) | hard       |
 | LeetCode 51  | [N 皇后](https://leetcode-cn.com/problems/n-queens/)         | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/solveNQueens.PHP) | hard       |
 | LeetCode 40  | [组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/combinationSum2.go) | Medium     |
