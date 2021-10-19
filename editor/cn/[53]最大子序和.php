@@ -65,7 +65,7 @@ class Solution
      */
     function maxSubArray($nums)
     {
-        //贪心算法
+        //贪心算法--当前指针所指元素之前的和小于0,丢弃
         $maxNum = $nums[0];                             // 最大和先记为数组第一个数；
         $tmp    = $nums[0];                                // 子串序列和，从第一个数开始；
 
