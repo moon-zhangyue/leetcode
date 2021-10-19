@@ -84,20 +84,33 @@ class Solution
         }
         return $maxNum;
 
-        //动态规划
+        //动态规划 --若前一个元素大于0,则将其加到当前元素上
         function maxSubArray($nums)
         {
-            $max = 0;
             $n   = sizeof($nums);
             $tmp = 0;
             $max = $nums[0];
             for ($i = 0; $i < $n; $i++) {
                 $tmp += $nums[$i];
-                if ($tmp < $nums[$i]) $tmp = $nums[$i];
-                if ($max < $tmp) $max = $tmp;
+                if ($tmp < $nums[$i]) {//说明字符串和 $tmp为负数 舍弃
+                    $tmp = $nums[$i];
+                }
+                if ($max < $tmp) {
+                    $max = $tmp;
+                }
             }
             return $max;
         }
+
+        //动态规划 --若前一个元素大于0,则将其加到当前元素上
+        $numsLen = sizeof($nums);
+        $dp      = [];//状态转移数组
+        $dp[0]   = $nums[0];
+        for ($i = 1; $i < $numsLen; $i++) {
+            $dp[$i] = $dp[$i - 1] < 0 ? $nums[$i] : $dp[$i - 1] + $nums[$i];//状态转移
+        }
+
+        return max($dp);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
