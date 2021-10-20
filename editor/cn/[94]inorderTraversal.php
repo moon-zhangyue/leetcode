@@ -50,7 +50,7 @@ class Solution
                 $stack[] = $curr; //入栈,保存轨迹
                 $curr    = $curr->left;   //找下个左子树
             } else {
-                $curr  = array_pop($stack);//左推展
+                $curr  = array_pop($stack);//左出栈
                 $res[] = $curr->val; //输出中序
                 $curr  = $curr->right; //找下个右子树
             }
