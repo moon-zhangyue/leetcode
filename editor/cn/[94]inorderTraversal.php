@@ -30,21 +30,31 @@ class Solution
      */
     function inorderTraversal($root)
     {
-        //中序遍历：按照访问左子树——根节点——右子树的方式遍历这棵树
-        /*中序 左中右
-左递归, 直到左空节点
-输出中
-右递归, 直到右节点是空节点*/
-        if ($root->left != null) {
-            $this->inorderTraversal($root->left);
+        /*迭代解法
+        设置一个栈保存迭代路径
+
+        树不为空或栈不为空, 执行以下语句, 否则终止,返回
+        左子树不为空,进栈,继续找左子树, 直到左子树为空
+        左子树为空, 开始退栈, 并输出中序
+        找右子树
+        重复 1 - 3
+        */
+        if ($root == null) {
+            return [];
         }
-
-        array_push($this->res, $root->val);
-
-        if ($root->right != null) {
-            $this->inorderTraversal($root->right);
+        $stack = [];
+        $curr  = $root;
+        $res   = [];
+        while ($curr || $stack) {
+            if ($curr != null) { // 左子树遍历, null结束
+                $stack[] = $curr; //入栈,保存轨迹
+                $curr    = $curr->left;   //找下个左子树
+            } else {
+                $curr  = array_pop($stack);//左推展
+                $res[] = $curr->val; //输出中序
+                $curr  = $curr->right; //找下个右子树
+            }
         }
-
-        return $this->res;
+        return $res;
     }
 }
