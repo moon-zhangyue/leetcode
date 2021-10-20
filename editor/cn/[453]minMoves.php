@@ -16,15 +16,9 @@ class Solution
      */
     function minMoves($nums)
     {
-        sort($nums);
-        $min = $nums[0];
-
-        $res = 0;
-        for ($i = 1; $i < count($nums); $i++) {
-            $res += $nums[$i] - $min;
-        }
-
-        return $res;
+        $c   = count($nums);
+        $sum = array_sum($nums);
+        return $sum - min($nums) * $c;
     }
 }
 
