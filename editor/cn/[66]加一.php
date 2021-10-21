@@ -47,27 +47,53 @@ class Solution
 
     /**
      * @param Integer[] $digits
+     * 动态规划题目
      *
      * @return Integer[]
      */
     function plusOne($digits)
     {
-        //动态规划题目
+        $length   = sizeof($digits); //数组长度
+        $currentI = $length - 1; //需要加1的位置默认为最后一位
 
-        for ($i = count($digits) - 1; $i >= 0; $i--) {
-            if ($digits[$i] != 9) {
-                $digits[$i]++;
-                for ($j = $i + 1; $j < count($digits) - 2; $j++) {
-                    $digits[$j] = 0;
+        for ($i = $length - 1; $i >= 0; $i--) {
+            if ($currentI == $i && $digits[$i] + 1 == 10) {
+                $digits[$i] = 0;
+
+                if ($i > 0) {
+                    $currentI--;
+                } else {
+                    array_unshift($digits, 1);//数组开头加个1
                 }
-                return $digits;
+            } else if ($currentI == $i && $digits[$i] + 1 < 10) {
+                $digits[$i] += 1;
+                break;
             }
         }
+        return $digits;
 
-        // digits 中所有的元素均为 9
-        $ans    = array_fill(0, count($digits) - 1, 0);
-        $ans[0] = 1;
-        return $ans;
+        //套用公式
+        $len = count($digits);
+        if ($len == 0) return [1];
+
+        $carry  = 0;//向前一位进位
+        $return = [];
+        $i      = $len - 1;
+
+        $digits[$i]++; // 直接在最后一位加上
+
+        if ($digits[$i] <= 9) return $digits;
+        while ($i >= 0 || $carry) {
+            $sum = $carry;
+            if ($i >= 0) {
+                $sum += $digits[$i];//加上进位值
+                $i--;
+            }
+
+            $carry = floor($sum / 10);//四舍五入向下取一
+            array_unshift($return, $sum % 10);//$sum非10就直接把该值加入,是10就加入0
+        }
+        return $return;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

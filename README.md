@@ -37,7 +37,7 @@ LeetCode
 | LeetCode 70  | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/climbStairs.go) | Easy       |
 | LeetCode 69  | [x 的平方根](https://leetcode-cn.com/problems/sqrtx/)        | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/mySqrt.go) | Easy       |
 | LeetCode 67  | [二进制求和](https://leetcode-cn.com/problems/add-binary/)   | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/addBinary.go) | Easy       |
-| LeetCode 66  | [加一](https://leetcode-cn.com/problems/plus-one/)           | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/plusOne.go) | Easy       |
+| LeetCode 66  | [加一](https://leetcode-cn.com/problems/plus-one/)           | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B66%5D%E5%8A%A0%E4%B8%80.php) | Easy       |
 | LeetCode 58  | [最后一个单词的长度](https://leetcode-cn.com/problems/length-of-last-word/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/lengthOfLastWord.go) | Easy       |
 | LeetCode 53  | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B53%5D%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.php) | Easy       |
 | LeetCode 52  | [N 皇后 II](https://leetcode-cn.com/problems/n-queens-ii/)   | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/totalNQueens.PHP) | hard       |
