@@ -41,6 +41,7 @@ class Solution
             }
         }
 
+        //记录次数
         $cnt1 = 0;
         $cnt2 = 0;
         foreach ($nums as $num) {
