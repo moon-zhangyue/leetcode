@@ -45,11 +45,12 @@ class Solution
 
     /**
      * @param Integer[] $nums
-     *
+     * 摩尔投票法
      * @return Integer[]
      */
     function majorityElement(array $nums)
     {
+        //一
         $list = $arr = [];
         $num  = count($nums) / 3;
         foreach ($nums as $v) {
@@ -66,6 +67,18 @@ class Solution
         }
 
         return $arr;
+
+        //二
+        $num = count($nums) / 3;
+        $res = [];
+        $arr = array_count_values($nums);
+        foreach ($arr as $k => $v) {
+            if ($v > $num) {
+                array_push($res, $k);
+            }
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
