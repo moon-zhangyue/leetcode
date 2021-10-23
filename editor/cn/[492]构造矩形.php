@@ -41,6 +41,14 @@ class Solution
      */
     function constructRectangle($area)
     {
+        /*
+         * 根据题目给出的三个要求，可知：
+            1.L⋅W=area，这也意味着 area 可以被 W 整除；
+            2.L≥W，结合要求 1 可得 W⋅W≤L⋅W=area，从而有 W ≤ area开方的绝对值
+            3.这意味着 W 应取满足 area 可以被 W 整除且 W ≤ area开方的绝对值的最大值。
+            我们可以初始化 W ≤ area开方的绝对值，不断循环判断 area 能否被 W 整除，如果可以则跳出循环，否则将 W 减一后继续循环。
+            循环结束后我们就找到了答案，长为 area/W，宽为 WW。
+         * */
         $w = floor(sqrt($area));
 
         while ($area % $w !== 0) {
