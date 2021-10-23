@@ -41,7 +41,13 @@ class Solution
      */
     function constructRectangle($area)
     {
+        $w = floor(sqrt($area));
 
+        while ($area % $w !== 0) {
+            $w--;
+        }
+
+        return [floor($area / $w), $w];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
