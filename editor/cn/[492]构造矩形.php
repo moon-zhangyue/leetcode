@@ -32,14 +32,17 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $area
      * @return Integer[]
      */
-    function constructRectangle($area) {
-
+    function constructRectangle($area)
+    {
+        $a       = 0;
+        $daawdwa = 11;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
