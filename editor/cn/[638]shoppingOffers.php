@@ -18,7 +18,6 @@ class Solution
      */
     function shoppingOffers($price, $special, $needs)
     {
-        var_dump($this);
-        var_dump();
+
     }
 }
