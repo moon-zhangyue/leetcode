@@ -53,6 +53,8 @@ class Solution
     function searchMatrix($matrix, $target)
     {
         //一 暴力查找
+        /*  时间复杂度是 O(mn)
+            空间复杂度是 O(1)*/
         foreach ($matrix as $k => $v) {
             foreach ($v as $key => $value) {
                 if ($value == $target) {
@@ -70,6 +72,10 @@ class Solution
         return false;
 
         //二 二分查找
+        /*
+         *  空间复杂度是 O(1)
+            时间复杂度是 O(mlogn)
+         * */
         foreach ($matrix as $val) {
             $index = $this->search($val, $target);
             if ($index >= 0) {
@@ -79,6 +85,9 @@ class Solution
         return false;
 
         //三 Z字形查找
+        /*  时间复杂度：O(m + n)O(m+n)。在搜索的过程中，如果我们没有找到 \textit{target}target，那么我们要么将 yy 减少 11，要么将 xx 增加 11。由于 (x, y)(x,y)
+        的初始值分别为 (0, n-1)(0,n−1)，因此 yy 最多能被减少 nn 次，xx 最多能被增加 mm 次，总搜索次数为 m + nm+n。在这之后，xx 和 yy 就会超出矩阵的边界。
+            空间复杂度：O(1)O(1)。*/
         $m = count($matrix); //行
         $n = count($matrix[0]); //列
 
