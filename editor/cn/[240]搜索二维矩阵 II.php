@@ -68,6 +68,36 @@ class Solution
             }
         }
         return false;
+
+        //二 二分查找
+        foreach ($matrix as $val) {
+            $index = $this->search($val, $target);
+            if ($index >= 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function search($nums, $target)
+    {
+        $min = 0;
+        $max = count($nums) - 1;
+
+        while ($min <= $max) {
+            $mid = floor(($max - $min) / 2) + $min;
+            $num = $nums[$mid];
+
+            if ($num === $target) {
+                return $mid;
+            } else if ($num > $target) {
+                $max = $mid - 1;
+            } else {
+                $min = $mid + 1;
+            }
+        }
+        return -1;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
