@@ -52,11 +52,19 @@ class Solution
      */
     function searchMatrix($matrix, $target)
     {
+        //一 暴力查找
         foreach ($matrix as $k => $v) {
             foreach ($v as $key => $value) {
                 if ($value == $target) {
                     return true;
                 }
+            }
+        }
+        return false;
+
+        foreach ($matrix as $value) {
+            if (in_array($target, $value)) {
+                return true;
             }
         }
         return false;
