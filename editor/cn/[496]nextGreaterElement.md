@@ -8,7 +8,7 @@
 
 下面的动画中给出了一个例子。
 
-![](D:\Visual-NMP-x64\www\leetcode\editor\cn\image\[496]nextGreaterElement\496.gif)
+![gif](https://raw.githubusercontent.com/moon-zhangyue/leetcode/master/editor/cn/image/%5B496%5DnextGreaterElement/496.gif)
 
 **复杂度分析**
 
