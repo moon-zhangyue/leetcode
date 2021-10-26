@@ -56,7 +56,20 @@ class Solution
      */
     function nextGreaterElement($nums1, $nums2)
     {
+        $arr = [];
+        for ($i = 0; $i < count($nums1); $i++) {
+            $start = array_search($nums1[$i], $nums2);
+            for ($j = $start; $j < count($nums2); $j++) {
+                if ($nums2[$j] > $nums1[$i]) {
+                    $arr[$i] = $nums2[$j];
+                    break;
+                } else {
+                    $arr[$i] = -1;
+                }
+            }
+        }
 
+        return $arr;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
