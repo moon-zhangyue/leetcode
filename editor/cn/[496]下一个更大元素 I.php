@@ -56,6 +56,7 @@ class Solution
      */
     function nextGreaterElement($nums1, $nums2)
     {
+        //一
         $arr = [];
         for ($i = 0; $i < count($nums1); $i++) {
             $start = array_search($nums1[$i], $nums2);
@@ -70,6 +71,9 @@ class Solution
         }
 
         return $arr;
+
+        //二 要求下一个更大的元素，就是用单调栈解
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

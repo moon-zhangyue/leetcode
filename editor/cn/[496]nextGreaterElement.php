@@ -17,20 +17,24 @@ class Solution
      */
     function nextGreaterElement($nums1, $nums2)
     {
-        $arr = [];
-        for ($i = 0; $i < count($nums1); $i++) {
-            $start = array_search($nums1[$i], $nums2);
-            for ($j = $start; $j < count($nums2); $j++) {
-                if ($nums2[$j] > $nums1[$i]) {
-                    $arr[$i] = $nums2[$j];
-                    break;
-                } else {
-                    $arr[$i] = -1;
-                }
+        $stack    = new SplStack();
+        $nums2Len = sizeof($nums2);
+
+        $arr = [];//保存nums2数组的next greater数组
+        for ($i = $nums2Len - 1; $i >= 0; $i--) {//从后往前迭代
+            while (!$stack->isEmpty() && $stack->top() <= $nums2[$i]) {
+                $stack->pop();//出栈
             }
+            $arr[$nums2[$i]] = $stack->isEmpty() ? -1 : $stack->top();//技巧，直接用值当键，因为题目说了没有重复元素，这样后面可以用O（1）的时间复杂度找到每个nums1数组元素对应的数据
+            $stack->push($nums2[$i]);//入栈
         }
 
-        return $arr;
+        $ret = [];//保存返回结果
+        foreach ($nums1 as $v) {
+            $ret[] = $arr[$v];
+        }
+
+        return $ret;
     }
 }
 
