@@ -67,6 +67,16 @@ class Solution
         return $p == $q;
 
         //递归
+        if ($p === null && $p === null) {
+            return true;;
+        } elseif ($p == null || $q == null) {
+            return false;
+        } elseif ($p->val != $q->val) {
+            return false;
+        }
+
+        //左右子树同时为真,才为真
+        return $this->isSameTree($p->left, $q->left) && $this->isSameTree($p->right, $q->right);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

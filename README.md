@@ -33,7 +33,7 @@ LeetCode
 | LeetCode 108 | [将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/sortedArrayToBST.go) | Easy       |
 | LeetCode 104 | [二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxDepth.go) | Easy       |
 | LeetCode 101 | [对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/isSymmetric.go) | Easy       |
-| LeetCode 100 | [相同的树](https://leetcode-cn.com/problems/same-tree/)      | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/isSameTree.go) | Easy       |
+| LeetCode 100 | [相同的树](https://leetcode-cn.com/problems/same-tree/)      | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B100%5D%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.php) | Easy       |
 | LeetCode 94  | [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/submissions/) | [Go](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B94%5D%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.php) | Easy       |
 | LeetCode 88  | [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/mergeSortArray.PHP) | Easy       |
 | LeetCode 83  | [删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/deleteDuplicates.go) | Easy       |
