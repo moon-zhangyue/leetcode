@@ -29,10 +29,12 @@ class Solution
 
     /**
      * @param String $s
+     *
      * @return String[]
      */
-    function removeInvalidParentheses($s) {
-        
+    function removeInvalidParentheses($s)
+    {
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
