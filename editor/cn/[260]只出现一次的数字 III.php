@@ -47,7 +47,24 @@ class Solution {
      * @return Integer[]
      */
     function singleNumber($nums) {
+        $arr = [];
+        foreach ($nums as $k => $v) {
+            if (!array_key_exists($v, $arr)) {
+                $arr[$v] = 1;
+            } else {
+                $arr[$v] = 2;
+            }
+        }
 
+        $res = [];
+
+        foreach ($arr as $key => $item) {
+            if ($item == 1) {
+                array_push($res, $key);
+            }
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
