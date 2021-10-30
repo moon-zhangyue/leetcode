@@ -40,13 +40,17 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[] $nums
+     *
      * @return Integer[]
      */
-    function singleNumber($nums) {
+    function singleNumber($nums)
+    {
+        //一遍历 hash表
         $arr = [];
         foreach ($nums as $k => $v) {
             if (!array_key_exists($v, $arr)) {
@@ -65,6 +69,9 @@ class Solution {
         }
 
         return $res;
+
+        //位运算
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

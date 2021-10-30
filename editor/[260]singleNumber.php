@@ -17,24 +17,10 @@ class Solution
      */
     function singleNumber($nums)
     {
-        $arr = [];
-        foreach ($nums as $k => $v) {
-            if (!array_key_exists($v, $arr)) {
-                $arr[$v] = 1;
-            } else {
-                $arr[$v] = 2;
-            }
+        for ($i=0, $a = 0;$i<count($nums);$i++) {
+            $a ^= $nums[$i];
         }
-
-        $res = [];
-
-        foreach ($arr as $key => $item) {
-            if ($item == 1) {
-                array_push($res, $key);
-            }
-        }
-
-        return $res;
+        return $a;
     }
 }
 
