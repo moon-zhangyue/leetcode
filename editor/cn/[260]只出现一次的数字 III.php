@@ -71,7 +71,21 @@ class Solution
         return $res;
 
         //位运算
+        for ($i = 0, $a = 0; $i < count($nums); $i++) {
+            $a ^= $nums[$i];
+        }
 
+        $k   = $a & (-$a);
+        $res = [];
+        foreach ($nums as $num) {
+            if (($num & $k) == 0) {
+                $res[0] ^= $num;
+            } else {
+                $res[1] ^= $num;
+            }
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

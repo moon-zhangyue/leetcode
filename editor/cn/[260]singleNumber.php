@@ -17,10 +17,21 @@ class Solution
      */
     function singleNumber($nums)
     {
-        for ($i=0, $a = 0;$i<count($nums);$i++) {
+        for ($i = 0, $a = 0; $i < count($nums); $i++) {
             $a ^= $nums[$i];
         }
-        return $a;
+
+        $k   = $a & (-$a);
+        $res = [];
+        foreach ($nums as $num) {
+            if (($num & $k) == 0) {
+                $res[0] ^= $num;
+            } else {
+                $res[1] ^= $num;
+            }
+        }
+
+        return $res;
     }
 }
 
