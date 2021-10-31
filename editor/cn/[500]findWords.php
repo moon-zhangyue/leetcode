@@ -16,15 +16,24 @@ class Solution
      */
     function findWords(array $words)
     {
-        $str1 = 'qwertyuiop';
-        $str2 = 'asdfghjkl';
-        $str3 = 'zxcvbnm';
+        $rows = [
+            10 => 'qwertyuiop',
+            9  => 'asdfghjkl',
+            7  => 'zxcvbnm'
+        ];
 
-        foreach ($words as $k => $v) {
-            $len = strlen($v);
+        $res = [];
 
-            $
+        foreach ($words as $word) {
+            foreach ($rows as $len => $row) {
+                if ($len == count(array_unique(str_split($row . strtolower($word))))) {
+                    $res[] = $word;
+                    break;
+                }
+            }
         }
+
+        return $res;
     }
 }
 

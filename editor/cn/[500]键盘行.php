@@ -47,57 +47,77 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-    class Solution
+class Solution
+{
+
+    /**
+     * @param String[] $words
+     *
+     * @return String[]
+     */
+    function findWords($words)
     {
+        //一
+        $arr = [
+            'q' => 1,
+            'w' => 1,
+            'e' => 1,
+            'r' => 1,
+            't' => 1,
+            'y' => 1,
+            'u' => 1,
+            'i' => 1,
+            'o' => 1,
+            'p' => 1,
+            'a' => 2,
+            's' => 2,
+            'd' => 2,
+            'f' => 2,
+            'g' => 2,
+            'h' => 2,
+            'j' => 2,
+            'k' => 2,
+            'l' => 2,
+            'z' => 3,
+            'x' => 3,
+            'c' => 3,
+            'v' => 3,
+            'b' => 3,
+            'n' => 3,
+            'm' => 3
+        ];
 
-        /**
-         * @param String[] $words
-         *
-         * @return String[]
-         */
-        function findWords($words)
-        {
-            //一
-            $arr = [
-                'q' => 1,
-                'w' => 1,
-                'e' => 1,
-                'r' => 1,
-                't' => 1,
-                'y' => 1,
-                'u' => 1,
-                'i' => 1,
-                'o' => 1,
-                'p' => 1,
-                'a' => 2,
-                's' => 2,
-                'd' => 2,
-                'f' => 2,
-                'g' => 2,
-                'h' => 2,
-                'j' => 2,
-                'k' => 2,
-                'l' => 2,
-                'z' => 3,
-                'x' => 3,
-                'c' => 3,
-                'v' => 3,
-                'b' => 3,
-                'n' => 3,
-                'm' => 3
-            ];
-
-            foreach ($words as $key => $val) {
-                $val   = strtolower($val);
-                $index = $arr[$val{0}];
-                for ($i = 1; $i < strlen($val); $i++) {
-                    if ($index != $arr[$val{$i}]) {
-                        unset($words[$key]);
-                        break;
-                    }
+        foreach ($words as $key => $val) {
+            $val   = strtolower($val);
+            $index = $arr[$val{0}];
+            for ($i = 1; $i < strlen($val); $i++) {
+                if ($index != $arr[$val{$i}]) {
+                    unset($words[$key]);
+                    break;
                 }
             }
-            return $words;
         }
+        return $words;
+
+        //二
+        $rows = [
+            10 => 'qwertyuiop',
+            9  => 'asdfghjkl',
+            7  => 'zxcvbnm'
+        ];
+
+        $res = [];
+
+        foreach ($words as $word) {
+            foreach ($rows as $len => $row) {
+                if ($len == count(array_unique(str_split($row . strtolower($word))))) {
+                    $res[] = $word;
+                    break;
+                }
+            }
+        }
+
+        return $res;
     }
+}
 //leetcode submit region end(Prohibit modification and deletion)
