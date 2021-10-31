@@ -43,7 +43,7 @@ class Solution
      */
     function maxDepth($root)
     {
-        if ($root === 0) return 0;
+        if ($root == null) return 0;
 
         $left  = $this->maxDepth($root->left);
         $right = $this->maxDepth($root->right);
