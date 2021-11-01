@@ -42,7 +42,9 @@ class Solution
      */
     function distributeCandies($candyType)
     {
-
+        $half = count($candyType) / 2;
+        $kind = count(array_unique($candyType));
+        return $half >= $kind ? $kind : $half;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
