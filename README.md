@@ -27,8 +27,8 @@ LeetCode
 | LeetCode 141 | [环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/hasCycle.go) | Easy       |
 | LeetCode 136 | [只出现一次的数字](https://leetcode-cn.com/problems/single-number/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B136%5D%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97.php) | Easy       |
 | LeetCode 125 | [验证回文串](https://leetcode-cn.com/problems/valid-palindrome/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/isPalindrome.go) | Easy       |
-| LeetCode 122 | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxProfit2.go) | Easy       |
-| LeetCode 121 | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxProfit.go) | Easy       |
+| LeetCode 122 | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/) | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxProfit2.go) | Medium       |
+| LeetCode 121 | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/submissions/) | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/maxProfit.go) | Easy       |
 | LeetCode 119 | [杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/getRow.go) | Easy       |
 | LeetCode 118 | [杨辉三角](https://leetcode-cn.com/problems/pascals-triangle/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/generate.go) | Easy       |
 | LeetCode 112 | [路径总和](https://leetcode-cn.com/problems/path-sum/submissions/) | [Go](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/go/src/hasPathSum.go) | Easy       |
