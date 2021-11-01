@@ -59,6 +59,16 @@ class Solution
         }
 
         return $max;
+
+        //二 贪心算法
+        $min = $prices[0];
+        $max = 0;
+        foreach ($prices as $k => $v) {
+            $min = $min > $v ? $v : $min;
+            $max = $v - $min > $max ? $v - $min : $max;
+        }
+
+        return $max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
