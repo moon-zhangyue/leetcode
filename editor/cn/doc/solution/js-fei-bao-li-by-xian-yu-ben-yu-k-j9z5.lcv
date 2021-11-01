@@ -1,0 +1,28 @@
+### 解题思路
+
+题目卖出只能在买入之后，也就是说可以直接找当前数组最小值，往后找差值最大值即可
+
+### 代码
+
+* javascript
+
+```javascript
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let end = 0;
+    let min = prices[0]
+    prices.forEach((element) => {
+        if(element < min){          
+            min = element
+        }
+        if(element-min > end){
+            end = element-min
+        }
+    })
+    return end
+};
+```
+
