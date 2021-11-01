@@ -27,7 +27,7 @@ class Solution
     }
 }
 
-$prices = [7, 1, 5, 3, 6, 4];
+$prices = [7, 3, 7, 1, 6, 4];
 //$prices = [7, 6, 4, 3, 1];
 //$prices = [1, 2];
 $class = new Solution();
