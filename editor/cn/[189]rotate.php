@@ -13,19 +13,32 @@ class Solution
      * @param Integer[] $nums
      * @param Integer   $k
      *
-     * @return NULL
+     * @return Array
      */
     function rotate(&$nums, $k)
     {
-//        $nums = array_reverse($nums);
+        $k %= count($nums);
 
-        $arr = [];
-        $len = count($nums);
-        for ($i = $len - 1; $i >= 0; $i--) {
-            $arr[($i + $k) % $len] = $nums[$i];
+        $this->reverse($nums, 0, count($nums) - 1);
+        $this->reverse($nums, 0, $k - 1);
+        $this->reverse($nums, $k, count($nums) - 1);
+
+        return $nums;
+    }
+
+
+    function reverse($nums, $start, $end)
+    {
+        while ($start < $end) {
+            $temp         = $nums[$start];
+            $nums[$start] = $nums[$end];
+            $nums[$end]   = $temp;
+
+            $start += 1;
+            $end   -= 1;
         }
-        ksort($arr);
-        return $arr;
+
+        return $nums;
     }
 }
 
