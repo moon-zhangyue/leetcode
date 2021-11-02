@@ -17,14 +17,12 @@ class Solution
      */
     function rotate(&$nums, $k)
     {
+//        $nums = array_reverse($nums);
+
         $arr = [];
         $len = count($nums);
         for ($i = $len - 1; $i >= 0; $i--) {
-            if ($i + $k >= $len) {
-                $arr[$i + $k - $len] = $nums[$i];
-            } else {
-                $arr[$i + $k] = $nums[$i];
-            }
+            $arr[($i + $k) % $len] = $nums[$i];
         }
         ksort($arr);
         return $arr;
