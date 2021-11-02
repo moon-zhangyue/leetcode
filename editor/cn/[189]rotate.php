@@ -17,29 +17,14 @@ class Solution
      */
     function rotate(&$nums, $k)
     {
-        $k %= count($nums);
-
-        $this->reverse($nums, 0, count($nums) - 1);
-        $this->reverse($nums, 0, $k - 1);
-        $this->reverse($nums, $k, count($nums) - 1);
-
-        return $nums;
-    }
-
-
-    function reverse($nums, $start, $end)
-    {
-        while ($start < $end) {
-            $temp         = $nums[$start];
-            $nums[$start] = $nums[$end];
-            $nums[$end]   = $temp;
-
-            $start += 1;
-            $end   -= 1;
+        $len = count($nums);
+        if (0 == ($k %= $len)) {
+            return $nums;
         }
+        for($i=0;)
 
-        return $nums;
     }
+
 }
 
 $nums  = [1, 2, 3, 4, 5, 6, 7];
