@@ -53,7 +53,7 @@ class Solution
 
     /**
      * @param Integer[] $nums
-     * @param Integer   $k
+     * @param Integer $k
      *
      * @return NULL
      */
@@ -65,7 +65,9 @@ class Solution
             $arr[($i + $k) % $len] = $nums[$i];
         }
         ksort($arr);
-        return $arr;
+
+        $nums = $arr;
+        return $nums;
 
         //二
         /*
