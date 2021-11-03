@@ -13,22 +13,18 @@ class Solution
      * @param Integer[] $nums
      * @param Integer   $k
      *
-     * @return NULL
+     * @return Array
      */
     function rotate(&$nums, $k)
     {
-        $arr = [];
         $len = count($nums);
-        for ($i = $len - 1; $i >= 0; $i--) {
-            if ($i + $k >= $len) {
-                $arr[$i + $k - $len] = $nums[$i];
-            } else {
-                $arr[$i + $k] = $nums[$i];
-            }
+        if (0 == ($k %= $len)) {
+            return $nums;
         }
-        ksort($arr);
-        return $arr;
+        for($i=0;)
+
     }
+
 }
 
 $nums  = [1, 2, 3, 4, 5, 6, 7];

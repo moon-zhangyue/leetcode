@@ -62,14 +62,15 @@ class Solution
         $arr = [];
         $len = count($nums);
         for ($i = $len - 1; $i >= 0; $i--) {
-            if ($i + $k >= $len) {
-                $arr[$i + $k - $len] = $nums[$i];
-            } else {
-                $arr[$i + $k] = $nums[$i];
-            }
+            $arr[($i + $k) % $len] = $nums[$i];
         }
         ksort($arr);
         return $arr;
+
+        //二
+        /*
+         * 通过数组翻转来实现；先翻转[0, n - k -1]范围的；再翻转[n - k, n - 1]范围的；最后在[0, n - 1]范围上再次翻转就可以得到结果。
+         * */
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
