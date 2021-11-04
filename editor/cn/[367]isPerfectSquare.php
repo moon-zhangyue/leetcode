@@ -20,7 +20,7 @@ class Solution
         $r = $num;
 
         while ($l <= $r) {
-            $mid = floor(($l + $r) / 2);
+            $mid = floor(($l + $r) / 2) + $l;
             $s   = $mid * $mid;
 
             if ($s < $num) {
@@ -36,4 +36,4 @@ class Solution
 }
 
 $class = new Solution();
-var_dump($class->isPerfectSquare(17));
+var_dump($class->isPerfectSquare(16));

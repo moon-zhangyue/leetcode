@@ -45,7 +45,7 @@ class Solution
         $r = $num;
 
         while ($l <= $r) {
-            $mid = floor(($l + $r) / 2);
+            $mid = floor(($l + $r) / 2) + $l;
             $s   = $mid * $mid;
 
             if ($s < $num) {
