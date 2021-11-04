@@ -16,24 +16,18 @@ class Solution
      */
     function isPerfectSquare($num)
     {
-        $l = 0;
-        $r = $num;
-
-        while ($l <= $r) {
-            $mid = floor(($l + $r) / 2) + $l;
-            $s   = $mid * $mid;
-
-            if ($s < $num) {
-                $l = $mid + 1;
-            } elseif ($s > $num) {
-                $r = $mid - 1;
-            } else {
-                return true;
+        $a = $num;
+        while (true) {
+            $b = floor(($a + $num / $a) / 2);
+            if ($a - $b < 1e-6) {
+                break;
             }
+            $a = $b;
         }
-        return false;
+        $sqr = $a;
+        return $sqr * $sqr == $num;
     }
 }
 
 $class = new Solution();
-var_dump($class->isPerfectSquare(16));
+var_dump($class->isPerfectSquare(17));

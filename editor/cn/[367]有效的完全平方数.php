@@ -57,6 +57,18 @@ class Solution
             }
         }
         return false;
+
+        //牛顿迭代法
+        $a = $num;
+        while (true) {
+            $b = floor(($a + $num / $a) / 2);
+            if ($a - $b < 1e-6) {
+                break;
+            }
+            $a = $b;
+        }
+        $sqr = $a;
+        return $sqr * $sqr == $num;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
