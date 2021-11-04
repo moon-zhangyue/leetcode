@@ -11,18 +11,32 @@ class Solution
 
     /**
      * @param Integer[] $nums
-     * @param Integer   $k
+     * @param Integer $k
      *
      * @return Array
      */
     function rotate(&$nums, $k)
     {
-        $len = count($nums);
-        if (0 == ($k %= $len)) {
+        $nums = array_reverse($nums);
+        $len  = count($nums);
+
+        if ($len <= 1) {
             return $nums;
         }
-        for($i=0;)
 
+        //然后分别移位0-（k-1）和k-end
+        for ($i = 0, $r = $k - 1; $i < $r; $i++, $r--) {
+            $tmp      = $nums[$i];
+            $nums[$i] = $nums[$r];
+            $nums[$r] = $tmp;
+        }
+        for ($l = $k, $r = $len - 1; $l < $r; $l++, $r--) {
+            $tmp      = $nums[$l];
+            $nums[$l] = $nums[$r];
+            $nums[$r] = $tmp;
+        }
+
+        return $nums;
     }
 
 }
