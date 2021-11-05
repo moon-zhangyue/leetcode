@@ -7,6 +7,7 @@ LeetCode
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | 剑指 Offer | [03. 数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5Boffer03%5DfindRepeatNumber.php) | Easy     |
 | 剑指 Offer | [069. 山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5Boffer069%5DpeakIndexInMountainArray.php) | Easy     |
+| LeetCode 1218 | [最长定差子序列](https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B1218%5D%E6%9C%80%E9%95%BF%E5%AE%9A%E5%B7%AE%E5%AD%90%E5%BA%8F%E5%88%97.php) | Easy     |
 | LeetCode 869 | [重新排序得到 2 的幂](https://leetcode-cn.com/problems/reordered-power-of-2/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B869%5D%E9%87%8D%E6%96%B0%E6%8E%92%E5%BA%8F%E5%BE%97%E5%88%B0%202%20%E7%9A%84%E5%B9%82.php) | Medium     |
 | LeetCode 647 | [回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | [PHP](https://gitee.com/love-for-poetry/Leetcode/blob/love-for-poetry/code/PHP/src/countSubstrings.PHP) | Medium     |
 | LeetCode 575 | [分糖果](https://leetcode-cn.com/problems/next-greater-element-i/) | [PHP](https://github.com/moon-zhangyue/leetcode/blob/master/editor/cn/%5B575%5D%E5%88%86%E7%B3%96%E6%9E%9C.php) | Easy     |

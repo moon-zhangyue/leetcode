@@ -53,15 +53,15 @@ class Solution
     function longestSubsequence($arr, $difference)
     {
         //动态规划
-        $dp = [];
+        $dp = [];//hash表  储存表示到该元素时能累积形成的等差数组个数
 
         for ($i = 0; $i < count($arr); $i++) {
-            $diff = 0;
+            $diff = 0;//等差数组元素个数
 
             if (isset($dp[$arr[$i] - $difference])) {
-                $diff = $dp[$arr[$i] - $difference];
+                $diff = $dp[$arr[$i] - $difference]; //该等差数组上一个值时的 等差数组个数
             }
-            $dp[$arr[$i]] = $diff + 1;
+            $dp[$arr[$i]] = $diff + 1; //累积到当前数据时,该数组所在等差数组的元素个数
         }
 
         return max($dp);
