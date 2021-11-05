@@ -52,7 +52,19 @@ class Solution
      */
     function longestSubsequence($arr, $difference)
     {
+        //动态规划
+        $dp = [];
 
+        for ($i = 0; $i < count($arr); $i++) {
+            $diff = 0;
+
+            if (isset($dp[$arr[$i] - $difference])) {
+                $diff = $dp[$arr[$i] - $difference];
+            }
+            $dp[$arr[$i]] = $diff + 1;
+        }
+
+        return max($dp);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
