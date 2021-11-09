@@ -69,6 +69,8 @@ class Solution
         return array_values($arr)[0];
 
         //二
+        /*时间复杂度：O(n \log n)O(nlogn)，其中 nn 是数组 \textit{nums}nums 的长度。排序的时间复杂度是 O(n \log n)O(nlogn)，遍历数组寻找丢失的数字的时间复杂度是 O(n)O(n)，因此总时间复杂度是 O(n \log n)O(nlogn)。
+         * */
         sort($nums);
 
         for ($i = 0; $i < count($nums); $i++) {
@@ -78,6 +80,17 @@ class Solution
         }
 
         return count($nums);
+
+        //三 数学方法  0到n相加 和 原数组的和  相减 即为 所缺数字
+
+        //四 位运算  x⊕x=0 和 x⊕0=x。
+        $len = count($nums);
+
+        for ($i = 0; $i < count($nums); $i++) {
+            $len ^= ($i ^ $nums[$i]);
+        }
+
+        return $len;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

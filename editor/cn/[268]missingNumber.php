@@ -16,15 +16,13 @@ class Solution
      */
     function missingNumber(array $nums)
     {
-        sort($nums);
+        $len = count($nums);
 
         for ($i = 0; $i < count($nums); $i++) {
-            if ($i != $nums[$i]) {
-                return $i;
-            }
+            $len ^= ($i ^ $nums[$i]);
         }
 
-        return count($nums);
+        return $len;
     }
 }
 
