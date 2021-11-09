@@ -14,7 +14,7 @@ class Solution
      *
      * @return Integer
      */
-    function missingNumber($nums)
+    function missingNumber(array $nums)
     {
         $arr = array_diff(range(0, count($nums)), $nums);
 
