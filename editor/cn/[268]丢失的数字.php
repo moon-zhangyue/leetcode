@@ -62,9 +62,22 @@ class Solution
      */
     function missingNumber(array $nums)
     {
+
+        //一
         $arr = array_diff(range(0, count($nums)), $nums);
 
         return array_values($arr)[0];
+
+        //二
+        sort($nums);
+
+        for ($i = 0; $i < count($nums); $i++) {
+            if ($i != $nums[$i]) {
+                return $i;
+            }
+        }
+
+        return count($nums);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

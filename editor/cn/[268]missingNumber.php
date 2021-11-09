@@ -16,12 +16,18 @@ class Solution
      */
     function missingNumber(array $nums)
     {
-        $arr = array_diff(range(0, count($nums)), $nums);
+        sort($nums);
 
-        return array_values($arr)[0];
+        for ($i = 0; $i < count($nums); $i++) {
+            if ($i != $nums[$i]) {
+                return $i;
+            }
+        }
+
+        return count($nums);
     }
 }
 
-$nums  = [9, 6, 4, 2, 3, 5, 7, 0, 1];
+$nums  = [8, 6, 4, 2, 3, 5, 7, 0, 1];
 $class = new Solution();
 var_dump($class->missingNumber($nums));
