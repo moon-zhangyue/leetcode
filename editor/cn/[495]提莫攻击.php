@@ -46,15 +46,33 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[] $timeSeries
-     * @param Integer $duration
+     * @param Integer   $duration
+     *
      * @return Integer
      */
-    function findPoisonedDuration($timeSeries, $duration) {
+    function findPoisonedDuration($timeSeries, $duration)
+    {
+        if ($duration == 0) {
+            return 0;
+        }
+        $time = 0;
 
+        for ($i = 0; $i < count($timeSeries); $i++) {
+            if ($i == 0) {
+                $time = $duration;
+            } elseif ($timeSeries[$i] - $timeSeries[$i - 1] >= $duration) { //上次中毒已结束
+                $time += $duration;
+            } else { //上次中毒未结束
+                $time += ($timeSeries[$i] - $timeSeries[$i - 1]);
+            }
+        }
+
+        return $time;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
