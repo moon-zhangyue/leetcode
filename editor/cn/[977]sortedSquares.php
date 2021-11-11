@@ -14,7 +14,7 @@ class Solution
      *
      * @return Integer[]
      */
-    function sortedSquares(array $nums)
+    function sortedSquares(array $nums): int
     {
         //双指针
         $len = count($nums);
