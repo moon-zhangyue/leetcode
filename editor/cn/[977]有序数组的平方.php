@@ -56,6 +56,26 @@ class Solution
          * 双指针
          * 两个指针分别指向位置 00 和 n-1n−1，每次比较两个指针对应的数，选择较大的那个逆序放入答案并移动指针。这种方法无需处理某一指针移动至边界的情况，
          * */
+        //双指针
+        $len = count($nums);
+
+        $i = 0;
+        $j = $pos = $len - 1;
+
+        while ($i <= $j) {
+            $i_sq = pow($nums[$i], 2); //$i ** 2;
+            $j_sq = pow($nums[$j], 2);
+
+            if ($i_sq < $j_sq) {
+                $arr[$pos] = $j_sq;
+                $j--;
+            } else {
+                $arr[$pos] = $i_sq;
+                $i++;
+            }
+            $pos--;
+        }
+        return $arr;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
