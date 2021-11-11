@@ -18,7 +18,6 @@ class Solution
     {
         //双指针
         $len = count($nums);
-//        $arr = array_fill(0, $len, 0);
 
         $i = 0;
         $j = $pos = $len - 1;
