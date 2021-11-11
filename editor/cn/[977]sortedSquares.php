@@ -23,18 +23,16 @@ class Solution
         $j = $pos = $len - 1;
 
         while ($i <= $j) {
-            $i_sq = pow($nums[$i], 2); //$i ** 2;
-            $j_sq = pow($nums[$j], 2);
-
-            if ($i_sq < $j_sq) {
-                $arr[$pos] = $j_sq;
+            if (pow($nums[$i], 2) < pow($nums[$j], 2)) {
+                $arr[$pos] = pow($nums[$j], 2);
                 $j--;
             } else {
-                $arr[$pos] = $i_sq;
+                $arr[$pos] = pow($nums[$i], 2);
                 $i++;
             }
             $pos--;
         }
+        sort($arr);
         return $arr;
     }
 }
