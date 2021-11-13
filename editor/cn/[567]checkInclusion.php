@@ -55,3 +55,6 @@ class Solution
         return false;
     }
 }
+$s1 = "ab"; $s2 = "eidbaooo";
+$class = new Solution();
+var_dump($class->checkInclusion($s1,$s2));
