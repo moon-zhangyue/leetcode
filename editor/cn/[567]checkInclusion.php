@@ -13,6 +13,7 @@ class Solution
     /**
      * @param String $s1
      * @param String $s2
+     *
      * @return Boolean
      */
     function checkInclusion($s1, $s2)
@@ -55,6 +56,8 @@ class Solution
         return false;
     }
 }
-$s1 = "ab"; $s2 = "eidbaooo";
+
+$s1    = "ab";
+$s2    = "eidbaooo";
 $class = new Solution();
-var_dump($class->checkInclusion($s1,$s2));
+var_dump($class->checkInclusion($s1, $s2));
