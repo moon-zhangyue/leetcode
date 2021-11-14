@@ -43,7 +43,7 @@ class Solution
      */
     function checkInclusion($s1, $s2)
     {
-        //一 滑动窗口
+        //一 子串问题 优先考虑-滑动窗口
         $needs  = str_split($s1);
         $needs  = array_count_values($needs);//初始化need窗口
         $window = [];
