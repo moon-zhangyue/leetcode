@@ -16,14 +16,15 @@ class Solution
      */
     function moveZeroes(array &$nums): array
     {
-        foreach ($nums as $k => $v) {
-            if ($v === 0) {
-                array_push($nums, 0);
-                unset($nums[$k]);
+        $left  = 0;
+        foreach ($nums as $right => $v) {
+            if ($v) {
+                if ($nums[$left] == 0) {
+                    list($nums[$right], $nums[$left]) = array($nums[$left], $v);
+                }
+                $left++;
             }
         }
-
-        return $nums;
     }
 }
 
