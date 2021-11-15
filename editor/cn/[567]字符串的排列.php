@@ -99,9 +99,11 @@ PHP内建的count_chars($string, $mode)有计算字串中每个字符出现次�
         //循环至长字串减去短字串的位置即可
         $start = 0;//从长字串中截取子字串的开始位置
         while ($start <= $size2 - $size1) {
-            $sub_str      = substr($s2, $start, $size1);//长字串中的子字串
-            $substr_array = count_chars($sub_str, 1);
-            if ($s1_array == $substr_array) return true;
+            $sub_str      = substr($s2, $start, $size1);//长字串中的子字串 每次截取子串长度的字符串
+            $substr_array = count_chars($sub_str, 1); //转换成跟$s1_array相同的数组
+            if ($s1_array == $substr_array) {
+                return true;
+            }
             $start++;
         }
     }
