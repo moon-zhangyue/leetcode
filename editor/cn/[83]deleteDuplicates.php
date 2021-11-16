@@ -28,20 +28,17 @@ class Solution
      */
     function deleteDuplicates($head)
     {
-        $map  = [];//哈希查找表
-        $cur  = $head;
-        $prev = null;
-        while ($cur != null) {
-            if (!isset($map[$cur->val])) {//第一次出现
-                $map[$cur->val] = 1;
-                $prev           = $cur;
-                $cur            = $cur->next;
-            } else {  //已经出现过
-                $prev->next = $cur->next;
-                $cur        = $cur->next;
+        $slow = $head;//慢指针
+        $fast = $head->next;//快指针
+        while ($fast != null) {
+            if ($slow->val != $fast->val) {
+                $slow      = $slow->next;//移动慢指针
+                $slow->val = $fast->val;
             }
+            $fast = $fast->next;//移动快指针
         }
 
+        $slow->next = null;//断开后面的链接
         return $head;
     }
 }

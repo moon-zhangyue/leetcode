@@ -71,7 +71,19 @@ class Solution
 
         return $head;
 
-        //二 O(1)空间
+        //二 O(1)空间  快慢指针
+        $slow = $head;//慢指针
+        $fast = $head->next;//快指针
+        while ($fast != null) {
+            if ($slow->val != $fast->val) {
+                $slow      = $slow->next;//移动慢指针
+                $slow->val = $fast->val;
+            }
+            $fast = $fast->next;//移动快指针
+        }
+
+        $slow->next = null;//断开后面的链接
+        return $head;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
