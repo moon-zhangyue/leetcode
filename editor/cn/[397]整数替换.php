@@ -45,14 +45,25 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $n
+     *
      * @return Integer
      */
-    function integerReplacement($n) {
+    function integerReplacement($n)
+    {
+        if ($n === 1) {
+            return 0;
+        }
 
+        if ($n % 2 == 0) {
+            return 1 + $this->integerReplacement($n / 2);
+        } else {
+            return 1 + min($this->integerReplacement($n + 1), $this->integerReplacement($n - 1));
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
