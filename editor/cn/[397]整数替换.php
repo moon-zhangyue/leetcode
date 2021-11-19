@@ -55,6 +55,7 @@ class Solution
      */
     function integerReplacement($n)
     {
+        //一
         if ($n === 1) {
             return 0;
         }
@@ -64,6 +65,22 @@ class Solution
         } else {
             return 1 + min($this->integerReplacement($n + 1), $this->integerReplacement($n - 1));
         }
+
+        //二
+        $res = 0;
+
+        while ($n !== 1) {
+            if ($n % 2 == 0) {
+                $n = $n / 2;
+            } elseif (($n + 1) % 4 == 0 && $n > 4) {//不能整除就计算 $now + 1 整除2 后的值能不能再次被2 整除(3除外)
+                $n = $n + 1;
+            } else {
+                $n = $n - 1;
+            }
+            $res++;
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
