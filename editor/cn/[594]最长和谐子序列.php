@@ -41,14 +41,37 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[] $nums
+     *
      * @return Integer
      */
-    function findLHS($nums) {
+    function findLHS($nums)
+    {
+        //枚举法
+        /*
+         * 我们可以枚举数组中的每一个元素，对于当前枚举的元素 xx，它可以和 x + 1x+1 组成和谐子序列。我们只需要在数组中找出等于 xx 或 x + 1x+1 的元素个数，就可以得到以 xx 为最小值的和谐子序列的长度。
 
+实际处理时，我们可以将数组按照从小到大进行排序，我们只需要依次找到相邻两个连续相同元素的子序列，检查该这两个子序列的元素的之差是否为 11。
+利用类似与滑动窗口的做法，\textit{begin}begin 指向第一个连续相同元素的子序列的第一个元素，\textit{end}end 指向相邻的第二个连续相同元素的子序列的末尾元素，如果满足二者的元素之差为 11，则当前的和谐子序列的长度即为两个子序列的长度之和，等于 \textit{end} - \textit{begin} + 1end−begin+1。
+         * */
+        sort($nums);
+        $left = 0;
+        $res  = 0;
+
+        for ($i = 0; $i < count($nums); $i++) {
+            while ($nums[$i] - $nums[$left] > 1) {
+                $left++;
+            }
+            if ($nums[$i] - $nums[$left] === 1) {
+                $res = max($res, $i - $left + 1);
+            }
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
