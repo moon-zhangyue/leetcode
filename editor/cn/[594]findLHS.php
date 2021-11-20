@@ -16,16 +16,12 @@ class Solution
      */
     function findLHS($nums)
     {
-        sort($nums);
-        $left = 0;
-        $res  = 0;
+        $arr = array_count_values($nums);
 
-        for ($i = 0; $i < count($nums); $i++) {
-            while ($nums[$i] - $nums[$left] > 1) {
-                $left++;
-            }
-            if ($nums[$i] - $nums[$left] === 1) {
-                $res = max($res, $i - $left + 1);
+        $res = 0;
+        foreach ($arr as $k => $v) {
+            if (array_key_exists($k + 1, $arr)) { //存在是当前k+1的 键
+                $res = max($res, $v + $arr[$k + 1]);
             }
         }
 
