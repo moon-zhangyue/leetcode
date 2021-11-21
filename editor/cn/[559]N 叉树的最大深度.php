@@ -63,7 +63,7 @@ class Solution {
         $max = 0;
         foreach ($root->children as $node) {
             $max = max($max, $this->maxDepth($node));
-        }
+    }
 
         return $max + 1;
     }
