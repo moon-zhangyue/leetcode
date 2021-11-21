@@ -27,8 +27,7 @@
 // 给定的面积不大于 10,000,000 且为正整数。 
 // 你设计的页面的长度和宽度必须都是正整数。 
 // 
-// Related Topics 数学 
-// 👍 76 👎 0
+// Related Topics 数学 👍 85 👎 0
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -37,12 +36,26 @@ class Solution
 
     /**
      * @param Integer $area
+     *
      * @return Integer[]
      */
     function constructRectangle($area)
     {
-        $a       = 0;
-        $daawdwa = 11;
+        /*
+         * 根据题目给出的三个要求，可知：
+            1.L⋅W=area，这也意味着 area 可以被 W 整除；
+            2.L≥W，结合要求 1 可得 W⋅W≤L⋅W=area，从而有 W ≤ area开方的绝对值
+            3.这意味着 W 应取满足 area 可以被 W 整除且 W ≤ area开方的绝对值的最大值。
+            我们可以初始化 W ≤ area开方的绝对值，不断循环判断 area 能否被 W 整除，如果可以则跳出循环，否则将 W 减一后继续循环。
+            循环结束后我们就找到了答案，长为 area/W，宽为 W。
+         * */
+        $w = floor(sqrt($area));
+
+        while ($area % $w !== 0) {
+            $w--;
+        }
+
+        return [floor($area / $w), $w];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
