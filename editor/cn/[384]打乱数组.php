@@ -43,25 +43,34 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    private $nums = [];
+
     /**
      * @param Integer[] $nums
      */
-    function __construct($nums) {
-
+    function __construct($nums)
+    {
+        $this->nums = $nums;
     }
 
     /**
      * @return Integer[]
      */
-    function reset() {
-
+    function reset()
+    {
+        return $this->nums;
     }
 
     /**
      * @return Integer[]
      */
-    function shuffle() {
+    function shuffle()
+    {
+        $arr = $this->nums;
 
+        shuffle($arr);
+
+        return $arr;
     }
 }
 
