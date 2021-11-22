@@ -9,13 +9,15 @@
 class Solution
 {
     private $nums = [];
+    private $original = [];
 
     /**
      * @param Integer[] $nums
      */
     function __construct($nums)
     {
-        $this->nums = $nums;
+        $this->nums     = $nums;
+        $this->original = $nums;
     }
 
     /**
@@ -31,11 +33,16 @@ class Solution
      */
     function shuffle()
     {
-        $arr = $this->nums;
+        for ($i = 0; $i < count($this->original); $i++) {
+            $j = mt_rand($i, count($this->original) - 1); //mt_rand比rand快
 
-        shuffle($arr);
+            $exp = $this->original[$i];
 
-        return $arr;
+            $this->original[$i] = $this->original[$j];
+            $this->original[$j] = $exp;
+        }
+
+        return $this->original;
     }
 }
 
