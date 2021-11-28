@@ -41,14 +41,43 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[][] $grid
+     *
      * @return Integer
      */
-    function maxAreaOfIsland($grid) {
+    function maxAreaOfIsland($grid)
+    {
+        $countX = count($grid[0]);
+        $countY = count($grid);
+        $max    = 0;
+        for ($i = 0; $i < $countY; $i++) {
+            for ($j = 0; $j < $countX; $j++) {
+                if (isset($grid[$i][$j]) && $grid[$i][$j] == 1) {
+                    $res = $this->getIsland($grid, $i, $j);
+                    //var_dump($res);
+                    $max = max($res, $max);
+                }
+            }
+        }
+        return $max;
+    }
 
+    function getIsland(&$grid, $i, $j)
+    {
+        if (isset($grid[$i][$j]) && $grid[$i][$j] == 1) {
+            $grid[$i][$j] = 0;
+
+            $num = 1 + $this->getIsland($grid, $i + 1, $j) +
+                $this->getIsland($grid, $i - 1, $j) +
+                $this->getIsland($grid, $i, $j + 1) +
+                $this->getIsland($grid, $i, $j - 1);
+            return $num;
+        }
+        return 0;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
