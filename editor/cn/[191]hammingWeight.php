@@ -15,6 +15,9 @@ class Solution
      */
     function hammingWeight($n)
     {
-
+        $bStr = decbin($n);
+        $arr  = str_split($bStr);
+        $r    = array_count_values($arr);
+        return isset($r[1]) ? $r[1] : 0;
     }
 }
