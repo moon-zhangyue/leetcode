@@ -59,7 +59,20 @@ class Solution
      */
     function maxPower($s)
     {
+        $max  = 0;
+        $left = '';
+        $now  = 1;
+        for ($i = 0; $i < strlen($s); $i++) {
+            if ($s{$i} == $left) {
+                $now++;
+            } else {
+                $left = $s{$i};
+                $now  = 1;
+            }
+            $max = max($max, $now);
+        }
 
+        return $max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
