@@ -48,15 +48,54 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer[] $nums
-     * @param Integer $k
+     * @param Integer   $k
+     *
      * @return Integer
      */
-    function largestSumAfterKNegations($nums, $k) {
+    function largestSumAfterKNegations($nums, $k)
+    {
+        /*
+         * 本题可以根据 nums数组中的负数的数量 和 k 之间的关系，贪心的选择翻转的位置，使数组和最大。
+情况1，若负数数量 大于 等于k，则将最小的kk个负数变为正数。
+情况2，若负数数量小于k，则将所有负数变为正数，之后根据 k 减去 负数的数量 的剩余值的奇偶性，进一步判断。
+若剩余值为偶数，则不用管。
+若剩余值为奇数，减去绝对值最小的值。
+时间复杂度：O(nlogn)
 
+空间复杂度：O(1)
+         * */
+        //贪心
+        $abs_min = 100;
+        $sum     = 0;
+        for ($i = 0; $i < count($nums); $i++) {
+            // 计算绝对值最小的值
+            $abs_min = min(abs($nums[$i]), $abs_min);
+            // 所有数字的和
+            $sum += $nums[$i];
+        }
+
+        sort($nums);
+
+        // 根据k，翻转nums[i]，并更新sum
+        for ($i = 0; $i < count($nums) && $k; $i++, $k--) {
+            if ($nums[$i] >= 0) {
+                break;
+            }
+
+            $sum += 2 * abs($nums[$i]);
+        }
+
+        // 若k有剩余，且为奇数，减去其在sum中的值
+        if ($k > 0 && ($k % 2 == 1)) {
+            $sum -= 2 * $abs_min;
+        }
+
+        return $sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
