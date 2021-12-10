@@ -16,6 +16,7 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -24,15 +25,45 @@
  *     function __construct($val) { $this->val = $val; }
  * }
  */
-class Solution {
+class Solution
+{
 
     /**
      * @param ListNode $l1
      * @param ListNode $l2
+     *
      * @return ListNode
      */
-    function addTwoNumbers($l1, $l2) {
-        
+    function addTwoNumbers($l1, $l2)
+    {
+        //①
+        $obj = null;
+
+        $additional = 0;
+        do {
+            $value = $l1->val + $l2->val + $additional;
+            if ($value < 10) {
+                $additional = 0;
+            } else {
+                $value      -= 10;
+                $additional = 1;
+            }
+
+            $tmp_obj = new ListNode($value);
+
+            if (is_null($obj)) {
+                $obj = $tmp_obj;
+            } else {
+                $next->next = $tmp_obj;
+            }
+            $next = $tmp_obj;
+
+            $l1 = $l1->next;
+            $l2 = $l2->next;
+
+        } while ($l1 || $l2 || $additional);
+
+        return $obj;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
