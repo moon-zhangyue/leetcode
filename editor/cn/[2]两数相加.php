@@ -64,6 +64,32 @@ class Solution
         } while ($l1 || $l2 || $additional);
 
         return $obj;
+
+        //②
+        if ($l1 === null) return $l2;
+        if ($l2 === null) return $l1;
+        $carry = 0;
+        // 添加虚拟头结点，方便返回
+        $dummyHead = new ListNode(0);
+        $cur       = $dummyHead;
+        while ($l1 !== null || $l2 !== null || $carry) {
+            $sum = $carry;
+            if ($l1 !== null) {
+                $sum += $l1->val;
+                $l1  = $l1->next;
+            }
+            if ($l2 !== null) {
+                $sum += $l2->val;
+                $l2  = $l2->next;
+            }
+
+            $carry = floor($sum / 10);
+            // 由于是逆序，将新节点挂在当前节点之后即可
+            $cur->next = new ListNode($sum % 10);
+            $cur       = $cur->next;
+        }
+
+        return $dummyHead->next;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
