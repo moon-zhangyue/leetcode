@@ -56,7 +56,7 @@ class Solution {
         $len = strlen($s);
         if ($len < 2) return $s;
 
-        $max_len = 0;
+        $max_len = 0;//最长长度
 
         //从数组第一个记录起始位置，第二位记录长度
         $res = [];
@@ -65,7 +65,7 @@ class Solution {
             $odd  = $this->centerSpread($s, $i, $i);
             $even = $this->centerSpread($s, $i, $i + 1);
             $max  = $odd[1] > $even[1] ? $odd : $even;
-            if ($max[1] > $max_len) {
+            if ($max[1] > $max_len) {//$max[1] 就是最长长度 $max[0]是起始位置
                 $res     = $max;
                 $max_len = $max[1];
             }
