@@ -43,7 +43,20 @@ class Solution
      */
     function findDisappearedNumbers($nums)
     {
+        //一
         return array_diff(range(1, count($nums), 1), $nums);
+
+        //二
+        $res = [];
+        for ($i = 0; $i < count($nums); $i++) {
+            $nums[abs($nums[$i]) - 1] = -abs($nums[abs($nums[$i]) - 1]);
+        }
+
+        for ($i = 0; $i < count($nums); $i++) {
+            if ($nums[$i] > 0) $res[] = $i + 1;
+        }
+
+        return $res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
