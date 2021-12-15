@@ -14,8 +14,18 @@ class Solution
      *
      * @return Boolean
      */
-    function isSymmetric($root)
+    public function isSymmetric($root)
     {
+        return $this->check($root, $root);
+    }
 
+    private function check($left, $right)
+    {
+        if ($left === null && $right === null) return true;
+        if ($left === null || $right === null) return false;
+        if ($left->val !== $right->val) return false;
+
+        return $this->check($left->left, $right->right)
+            && $this->check($left->right, $right->left);
     }
 }
