@@ -59,5 +59,7 @@ $a     = 7;
 $b     = -3;
 $a     = -2147483648;
 $b     = -1;
+$a     = 2147483647;
+$b     = 1;
 $class = new Solution();
 var_dump($class->divide($a, $b));
