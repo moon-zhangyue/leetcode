@@ -93,7 +93,7 @@ class Solution
         $res   = 0;
         $shift = 31;
         while ($dividend <= $divisor) {
-            while ($dividend > $divisor << $shift) {
+            while ($dividend > $divisor << $shift) { //将 $divisor 中的位向左移动 $shift 次（每一次移动都表示“乘以 2”，即“乘以 2$b ”）
                 $shift--;
             }
             $dividend -= $divisor << $shift;
