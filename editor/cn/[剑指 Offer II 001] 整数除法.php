@@ -61,7 +61,7 @@ class Solution
 
 
     //位运算
-    function divide(int $a, int $b): int
+    function divides(int $a, int $b): int
     {
         if ($a == -2147483648 && $b == -1) { //此处不用PHP_INT_MIN和PHP_INT_MAX  因为是64位系统
             return 2147483647;

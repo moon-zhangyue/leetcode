@@ -17,33 +17,41 @@ class Solution
      */
     function divide(int $a, int $b): int
     {
-        if ($a == -2147483648 && $b == -1) { //此处不用PHP_INT_MIN和PHP_INT_MAX  因为是64位系统
+        //PHP超时
+//        if ($a == PHP_INT_MIN && $b === -1) {//最大整数值  64位不可以用
+//            return PHP_INT_MAX;
+//        }
+        if ($a == -2147483648 && $b === -1) {//最大整数值  64位不可以用
             return 2147483647;
         }
-
-        //判断是否同号，同号结果为正数
-        $flag = false;
-        if (($a < 0 && $b < 0) || ($a > 0 && $b > 0)) {
-            $flag = true;
+        $negative = 2; //被除数
+        if ($a > 0) {
+            $negative--;
+            $a = -$a;
         }
-
-        $dividend = $a > 0 ? -$a : $a; //被除数
-        $divisor  = $b > 0 ? -$b : $b; //除数
-        if ($dividend > $divisor) {
-            return 0;
+        if ($b > 0) {
+            $negative--;
+            $b = -$b;
         }
-        //计算结果的绝对值
-        $res   = 0;
-        $shift = 31;
-        while ($dividend <= $divisor) {
-            while ($dividend > $divisor << $shift) {
-                $shift--;
+        $res = $this->divideCore($a, $b);
+        return $negative == 1 ? -$res : $res;
+    }
+
+    function divideCore(int $a, int $b)
+    {
+        $ret = 0;
+        // 注意a, b都是负数，所以a <= b就是还可以继续除
+        while ($a <= $b) {
+            $value = $b;
+            $quo   = 1;
+            while ($value >= 0xc0000000 && $a <= $value + $value) {
+                $quo   += $quo;
+                $value += $value;
             }
-            $dividend -= $divisor << $shift;
-            $res      += 1 << $shift;
+            $ret += $quo;
+            $a   -= $value;
         }
-
-        return $flag ? $res : -$res;
+        return $ret;
     }
 }
 
