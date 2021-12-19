@@ -65,14 +65,16 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $n
      * @param Integer[][] $trust
      * @return Integer
      */
-    function findJudge($n, $trust) {
+    function findJudge($n, $trust)
+    {
 
     }
 }
