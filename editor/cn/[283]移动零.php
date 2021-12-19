@@ -34,6 +34,23 @@ class Solution
         }
 
         return $nums;
+
+        //双指针
+        /*快指针R遍历数组，每次+1
+快指针R指非0，慢指针L +1
+快指针R指　0，慢指针L停在0
+直到快指针R指非0，交换，慢指针L +1*/
+        $left = 0;
+        foreach ($nums as $right => $v) {
+            if ($v) {
+                if ($nums[$left] == 0) {
+                    list($nums[$right], $nums[$left]) = array($nums[$left], $v);
+                }
+                $left++;
+            }
+        }
+
+        //https://leetcode-cn.com/problems/move-zeroes/solution/sort-cha-ru-shuang-zhi-zhen-dao-xu-shun-xu-bian-li/
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -20,14 +20,19 @@ class Solution
         if ($duration == 0) {
             return 0;
         }
-        $arr = [];
-        foreach ($timeSeries as $k => $v) {
-            $new_arr = range($v, $v + $duration - 1);
+        $time = 0;
 
-            $arr = array_merge($arr, $new_arr);
+        for ($i = 0; $i < count($timeSeries); $i++) {
+            if ($i == 0) {
+                $time = $duration;
+            } elseif ($timeSeries[$i] - $timeSeries[$i - 1] >= $duration) { //上次中毒已结束
+                $time += $duration;
+            } else { //上次中毒未结束
+                $time += ($timeSeries[$i] - $timeSeries[$i - 1]);
+            }
         }
 
-        return count(array_flip($arr));
+        return $time;
     }
 }
 
