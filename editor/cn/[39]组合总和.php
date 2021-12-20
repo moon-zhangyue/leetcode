@@ -70,6 +70,7 @@ class Solution
      */
     function combinationSum($candidates, $target)
     {
+        //回溯算法+剪枝
         if ($target <= 0) return [];
         sort($candidates);
         $this->combine($candidates, $target, [], 0);
