@@ -40,7 +40,7 @@ class Solution
             // 数字可重复使用
             $this->combine($nums, $target - $nums[$i], $list, $i);
             // 回溯
-            array_pop($list);
+            array_pop($list);//将当前最后添加的数弹出
         }
     }
 }
