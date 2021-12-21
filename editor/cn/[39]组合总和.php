@@ -55,7 +55,7 @@
 // candidate 中的每个元素都 互不相同 
 // 1 <= target <= 500 
 // 
-// Related Topics 数组 回溯 👍 1670 👎 0
+// Related Topics 数组 回溯 👍 1671 👎 0
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -70,7 +70,6 @@ class Solution
      */
     function combinationSum($candidates, $target)
     {
-        //回溯算法+剪枝
         if ($target <= 0) return [];
         sort($candidates);
         $this->combine($candidates, $target, [], 0);
