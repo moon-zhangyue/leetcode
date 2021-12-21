@@ -61,6 +61,7 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution
 {
+    //搜索回溯+剪枝
     protected $result = [];
 
     /**
