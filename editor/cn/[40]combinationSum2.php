@@ -29,22 +29,21 @@ class Solution
         // terminator
         if ($target < 0) return;
         if ($target == 0) {
-            sort($list);
-            if (!in_array($list, $this->result)) {
-                $this->result[] = $list;
-            }
-
+            $this->result[] = $list;
             return;
         }
 
         for ($i = $start; $i < count($nums); ++$i) {
-            // 由于数字是排好序的，所以可以进行剪枝
+            // 第一次剪枝，因为数组排好序了，小的数字都得不到结果，大的数字就没有必要计算了
             if ($target - $nums[$i] < 0) break;
+            // 第二次剪枝，如示例 [1,1,2,5,6]，遍历到第二个分支时，[1,2], [1,5], [1,6], [1,2,5], [1,2,6], [1,5,6]
+            // 这样的子树下的所有情况在第一次遍历时都已覆盖，无需再重复计算
+            if ($i > $start) {
+                if ($nums[$i] == $nums[$i - 1]) continue;
+            }
             $list[] = $nums[$i];
-            // 数字可重复使用
-            $this->combine($nums, $target - $nums[$i], $list, $i);
-            // 回溯
-            array_pop($list);//将当前最后添加的数弹出
+            $this->combine($nums, $target - $nums[$i], $list, $i + 1);
+            array_pop($list);
         }
     }
 }
