@@ -45,6 +45,15 @@ class Solution
     function singleNumber($nums)
     {
         //使用额外空间可以用hash表
+
+        //不使用额外空间
+        $ones = 0;
+        $twos = 0;
+        foreach ($nums as $num) {
+            $ones = $ones ^ $num & ~$twos;
+            $twos = $twos ^ $num & ~$ones;
+        }
+        return $ones;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
