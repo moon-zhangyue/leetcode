@@ -32,14 +32,34 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $numRows
+     *
      * @return Integer[][]
      */
-    function generate($numRows) {
+    function generate($numRows)
+    {
+        //动态规划
+        $array = [];
+        for ($i = 0; $i < $numRows; $i++) {
+            $arr = [];
+            for ($j = 0; $j < $i + 1; $j++) {
+                if ($i == 0) {
+                    $arr = [1];
+                } else {
+                    $left  = isset($array[$i - 1][$j - 1]) ? $array[$i - 1][$j - 1] : 0; //左上角
+                    $right = isset($array[$i - 1][$j]) ? $array[$i - 1][$j] : 0; //右上角
+                    array_push($arr, $left + $right);
+                }
+            }
 
+            $array[$i] = $arr;
+        }
+
+        return $array;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
