@@ -48,32 +48,30 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution
 {
-    private $time = 0;
-
     /**
      * @param Integer $n
      * @return Integer
      */
     function numberOfMatches($n)
     {
+        static $time = 0;
         if ($n == 2) {
-            $this->time += 1;
+            $time += 1;
         } elseif ($n == 1) {
             return 0;
         } else {
             if ($n % 2 == 0) {//偶数
-                $this->time = $this->time + ($n / 2);
+                $time = $time + ($n / 2);
 
                 $this->numberOfMatches($n / 2);
             } else {
-                $this->time = $this->time + floor($n / 2); //包含一只轮空队伍
+                $time = $time + floor($n / 2); //包含一只轮空队伍
 
                 $this->numberOfMatches(ceil($n / 2));
             }
         }
 
-
-        return (int)$this->time;
+        return (int)$time;
     }
 }
 
