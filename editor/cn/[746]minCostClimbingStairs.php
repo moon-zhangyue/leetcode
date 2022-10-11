@@ -16,6 +16,6 @@ class Solution
      */
     function minCostClimbingStairs($cost)
     {
-
+        array_fill();
     }
 }
