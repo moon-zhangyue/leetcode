@@ -35,15 +35,24 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param String $s
      * @param String $goal
+     *
      * @return Boolean
      */
-    function rotateString($s, $goal) {
-
+    function rotateString($s, $goal)
+    {
+        if (strlen($s) != strlen($goal)) {
+            return false;
+        }
+        if (strstr($s . $s, $goal)) {
+            return true;
+        }
+        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
