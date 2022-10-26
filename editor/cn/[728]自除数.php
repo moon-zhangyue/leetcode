@@ -36,15 +36,39 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution
+{
 
     /**
      * @param Integer $left
      * @param Integer $right
+     *
      * @return Integer[]
      */
-    function selfDividingNumbers($left, $right) {
+    function selfDividingNumbers($left, $right)
+    {
+        $ans = [];
+        for ($i = $left; $i <= $right; $i++) {
+            if ($this->isSelfDividing($i)) {
+                array_push($ans, $i);
+            }
+        }
 
+        return $ans;
+    }
+
+    function isSelfDividing($num)
+    {
+        $temp = $num;
+        while ($temp > 0) {
+            $digit = $temp % 10;
+            if ($digit === 0 || $num % $digit != 0) {
+                return false;
+            }
+            $temp = floor($temp / 10);
+        }
+
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
